@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Blog by Miroslav Nikolov`,
+    title: `webup.org/blog`,
     author: {
       name: `Miroslav Nikolov`,
       summary: `I code React, javascript and open source.`,

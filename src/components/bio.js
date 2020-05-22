@@ -41,7 +41,7 @@ const Bio = () => {
     <div
       style={{
         display: `flex`,
-        marginBottom: rhythm(2.5),
+        marginBottom: rhythm(2),
       }}
     >
       <Image
@@ -58,15 +58,15 @@ const Bio = () => {
         }}
       />
       <p>
-        {author.summary}
-        <br />
-        <a href={`https://twitter.com/${social.twitter}`}>
+        Blog by <a href="https://webup.org">{author.name}</a> (<a href={`https://twitter.com/${social.twitter}`}>
           Twitter
         </a>
         {`, `}
         <a href={`https://github.com/${social.twitter}`}>
           Github
-        </a>
+        </a>). 
+        <br />
+        {author.summary}
       </p>
     </div>
   )
