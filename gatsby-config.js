@@ -9,7 +9,8 @@ module.exports = {
     siteUrl: `https://webup.org/blog`,
     social: {
       twitter: `moubi`,
-      github: `moubi`
+      github: `moubi`,
+      about: `https://webup.org`
     },
   },
   plugins: [
