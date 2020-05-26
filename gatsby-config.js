@@ -3,14 +3,14 @@ module.exports = {
     title: `webup.org/blog`,
     author: {
       name: `Miroslav Nikolov`,
-      summary: `I code React, javascript and open source.`,
+      summary: `I do Javascript, React and open source.`,
     },
     description: `A starter blog demonstrating what Gatsby can do.`,
     siteUrl: `https://webup.org/blog`,
     social: {
       twitter: `moubi`,
       github: `moubi`,
-      about: `https://webup.org`
+      about: `https://webup.org`,
     },
   },
   plugins: [
@@ -47,6 +47,7 @@ module.exports = {
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
+          `gatsby-remark-reading-time`,
         ],
       },
     },

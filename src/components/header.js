@@ -59,26 +59,26 @@ const Header = ({ location, title }) => {
         alignItems: `center`
       }}
     >
-    {header}
-    <span>
-      <ThemeToggler>
-        {({ theme, toggleTheme }) => (
-          <a
-            style={{
-              ...scale(-0.2),
-              cursor: `pointer`
-            }}
-            href="/"
-            onClick={e => {
-              e.preventDefault();
-              toggleTheme(theme === "dark" ? "light" : "dark");
-            }}
-          >
-            {theme === "dark" ? "light" : "dark"}{" "}theme
-          </a>
-        )}
-      </ThemeToggler>
-    </span>
+      {header}
+      <span>
+        <ThemeToggler>
+          {({ theme, toggleTheme }) => (
+            <a
+              style={{
+                ...scale(-0.2),
+                cursor: `pointer`
+              }}
+              href="/"
+              onClick={e => {
+                e.preventDefault();
+                toggleTheme(theme === "dark" ? "light" : "dark");
+              }}
+            >
+              {theme === "dark" ? "light" : "dark"}{" "}theme
+            </a>
+          )}
+        </ThemeToggler>
+      </span>
     </header>
   )
 }

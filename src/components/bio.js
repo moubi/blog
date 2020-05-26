@@ -7,7 +7,7 @@ import { rhythm } from "../utils/typography"
 const Bio = () => {
   const data = useSiteMetadata()
   const { author, social } = data.site.siteMetadata
-  
+
   return (
     <div
       style={{
@@ -30,12 +30,12 @@ const Bio = () => {
       />
       <p>
         Blog by <a href="https://webup.org">{author.name}</a> (<a href={`https://twitter.com/${social.twitter}`}>
-          Twitter
+          twitter
         </a>
         {`, `}
         <a href={`https://github.com/${social.github}`}>
-          Github
-        </a>). 
+          github
+        </a>).
         <br />
         {author.summary}
       </p>
