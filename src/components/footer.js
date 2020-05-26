@@ -8,9 +8,25 @@ const Footer = () => {
 
   return (
     <footer style={{ marginTop: rhythm(4) }}>
-        <a href={`https://twitter.com/${social.twitter}`}>twitter</a> {" • "}
-        <a href={`https://github.com/moubi${social.github}`}>github</a> {" • "}
-        <a href={social.about}>about</a>
+      <a
+        href={`https://twitter.com/${social.twitter}`}
+        target="_blank"
+        rel="noreferrer"
+      >
+        twitter
+      </a>{" "}
+      {" • "}
+      <a
+        href={`https://github.com/${social.github}`}
+        target="_blank"
+        rel="noreferrer"
+      >
+        github
+      </a>{" "}
+      {" • "}
+      <a href={social.about} target="_blank" rel="noreferrer">
+        about
+      </a>
     </footer>
   )
 }

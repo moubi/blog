@@ -6,33 +6,42 @@ Wordpress2016.overrideThemeStyles = () => ({
     boxShadow: `none`,
   },
   a: {
-    color: 'var(--textLink)',
+    color: "var(--textLink)",
   },
   // gatsby-remark-autolink-headers - don't underline when hidden
-  'a.anchor': {
-    boxShadow: 'none',
+  "a.anchor": {
+    boxShadow: "none",
   },
   // gatsby-remark-autolink-headers - use theme colours for the link icon
   'a.anchor svg[aria-hidden="true"]': {
-    stroke: 'var(--textLink)',
+    stroke: "var(--textLink)",
   },
   hr: {
-    background: 'var(--hr)',
+    background: "var(--hr)",
   },
   p: {
-    color: 'var(--textNormal)'
+    color: "var(--textNormal)",
   },
   h1: {
     fontWeight: 800,
-    color: 'var(--textTitle)'
+    color: "var(--textTitle)",
   },
-  h3: {
+  "h2, h3, h4, h5, h6, li": {
+    color: "var(--textNormal)",
+  },
+  h4: {
+    textTransform: "none",
+  },
+  h5: {
+    fontSize: typography.rhythm(0.5),
+  },
+  "header h3": {
     fontWeight: 800,
-    color: 'var(--textLink)'
+    color: "var(--textLink)",
   },
   small: {
-    color: 'var(--textNormal)'
-  }
+    color: "var(--textNormal)",
+  },
 })
 
 delete Wordpress2016.googleFonts

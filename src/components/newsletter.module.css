@@ -1,0 +1,142 @@
+.container {
+  width:400px;
+  height:500px;
+  background-color:#21242A;
+  margin:20px auto;
+  border-radius:4px;
+  text-align:center;
+  position:relative;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, .2);
+  overflow: hidden;
+}
+
+.one, .two {
+  display:block;
+  height:500px;
+  width:400px;
+  margin:0px auto;
+  position:absolute;
+  transition: all 600ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.one {
+  top: 0;
+  margin-top: 20px;
+}
+
+.two {
+  top: 500px;
+  background-color: #ffc107;
+}
+
+.two h3 {
+  color:#fff;
+  padding-top:240px;
+}
+
+.logo {
+  display:block;
+  width:40%;
+  margin:20px auto;
+  font-size: 100px;
+  line-height: 1em;
+}
+
+.one .heading {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 900;
+  margin-top: 40px;
+}
+
+.container p {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  padding: 0 40px;
+}
+
+input[type='text'] {
+  width:85%;
+  height:60px;
+  margin-top:20px;
+  margin-bottom:20px;
+  padding-bottom:-80px;
+  border:none;
+  border-bottom: 3px solid #eab768;
+  border-radius: 5px;
+  position:relative;
+}
+
+input[type='text']:active:focus,
+input[type='text']:focus,
+input[type='text']:hover {
+  outline: none;
+  font-size:20px;
+}
+
+input[type='text']:focus::-webkit-input-placeholder,
+input[type='text']:active:focus::-webkit-input-placeholder {
+  display:block;
+  font-size:12px;
+  transform:translateY(-20px);
+}
+
+::placeholder {
+  padding: 0 10px;
+  font-size:14px;
+  color:#000;
+  transform:translateY(0px);
+  transition: all .3s ease-in-out;
+}
+
+.one .btn {
+  width:85%;
+  background-color:#eab768;
+  padding:15px;
+  border:none;
+  border-radius:5px;
+  font-size:16px;
+  font-weight: bold;
+  color:#fff;
+  text-transform:capitalize;
+  cursor:pointer;
+}
+
+.one .btn:active:focus,
+.one .btn:focus,
+.one .btn:hover{
+  outline: none;
+}
+
+.close {
+  position:relative;
+  top:0;
+  left:0;
+  display:block;
+  cursor:pointer;
+}
+
+.close:before {
+  content:"";
+  position:absolute;
+  top:-240px;
+  right:50px;
+  display:block;
+  width:22px;
+  height:3px;
+  background:#fff;
+  transform:rotate(45deg);
+}
+
+.close:after {
+  content:"";
+  position:absolute;
+  top:-240px;
+  right:50px;
+  display:block;
+  width:22px;
+  height:3px;
+  background:#fff;
+  transform:rotate(-45deg);
+}
