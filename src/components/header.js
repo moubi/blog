@@ -11,7 +11,7 @@ const Header = ({ location, title }) => {
     header = (
       <h1
         style={{
-          ...scale(1.2),
+          ...scale(1),
           marginTop: 0,
           marginBottom: 0,
         }}
@@ -31,7 +31,7 @@ const Header = ({ location, title }) => {
     header = (
       <h3
         style={{
-          fontFamily: `Montserrat, sans-serif`,
+          fontFamily: "var(--secondaryFontFamily)",
           lineHeight: rhythm(2),
           marginTop: 0,
           marginBottom: 0,
@@ -53,7 +53,7 @@ const Header = ({ location, title }) => {
   return (
     <header
       style={{
-        marginBottom: rhythm(2),
+        marginBottom: rhythm(1.6),
         display: `flex`,
         justifyContent: `space-between`,
         alignItems: `center`,

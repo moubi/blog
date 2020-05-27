@@ -35,7 +35,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               marginBottom: rhythm(1),
             }}
           >
-            {post.frontmatter.date} {" | ⏳"}
+            {post.frontmatter.date} {" | ⏳ "}
             {post.fields.readingTime.text}
           </p>
         </header>

@@ -23,7 +23,7 @@ Wordpress2016.overrideThemeStyles = () => ({
     color: "var(--textNormal)",
   },
   h1: {
-    fontWeight: 800,
+    fontWeight: 900,
     color: "var(--textTitle)",
   },
   "h2, h3, h4, h5, h6, li": {
@@ -38,12 +38,12 @@ Wordpress2016.overrideThemeStyles = () => ({
   "header h3": {
     fontWeight: 800,
     color: "var(--textLink)",
+    fontFamily: "var(--secondaryFontFamily)",
   },
   small: {
     color: "var(--textNormal)",
   },
 })
-
 delete Wordpress2016.googleFonts
 
 const typography = new Typography(Wordpress2016)

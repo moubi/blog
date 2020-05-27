@@ -7,6 +7,7 @@ export default function Newsletter() {
       className={styles.container}
       style={{
         backgroundColor: "var(--bgHighlight)",
+        fontFamily: "var(--secondaryFontFamily)",
       }}
     >
       <div>
@@ -19,20 +20,32 @@ export default function Newsletter() {
           and front-end.
         </p>
       </div>
-      <form className={styles.form}>
+      <form
+        className={styles.form}
+        action="https://webup.us18.list-manage.com/subscribe/post"
+        method="post"
+      >
+        <input type="hidden" name="u" value="a8b6e7feef85415df77a72883" />
+        <input type="hidden" name="id" value="a1d768b4bc" />
         <input
           style={{
             border: "var(--borderInput)",
           }}
+          required
           type="text"
           placeholder="Name"
+          name="MERGE2"
+          id="MERGE2"
         />
         <input
           style={{
             border: "var(--borderInput)",
           }}
-          type="text"
+          required
+          type="email"
           placeholder="Email"
+          name="MERGE0"
+          id="MERGE0"
         />
         <br />
         <button

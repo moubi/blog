@@ -5,7 +5,7 @@ import { PageProps, Link, graphql } from "gatsby"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
+import { rhythm, scale } from "../utils/typography"
 
 type Data = {
   site: {
@@ -49,6 +49,8 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
               <h3
                 style={{
                   marginBottom: rhythm(1 / 4),
+                  fontWeight: "900",
+                  ...scale(0.6)
                 }}
               >
                 <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
@@ -56,7 +58,7 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
                 </Link>
               </h3>
               <small>
-                {node.frontmatter.date} {" | ⏳"}
+                {node.frontmatter.date} {" | ⏳ "}
                 {node.fields.readingTime.text}
               </small>
             </header>
