@@ -13,13 +13,13 @@ const Header = ({ location, title }) => {
         style={{
           ...scale(1.2),
           marginTop: 0,
-          marginBottom: 0
+          marginBottom: 0,
         }}
       >
         <Link
           style={{
             boxShadow: `none`,
-            color: `inherit`
+            color: `inherit`,
           }}
           to={`/`}
         >
@@ -34,13 +34,13 @@ const Header = ({ location, title }) => {
           fontFamily: `Montserrat, sans-serif`,
           lineHeight: rhythm(2),
           marginTop: 0,
-          marginBottom: 0
+          marginBottom: 0,
         }}
       >
         <Link
           style={{
             boxShadow: `none`,
-            color: `inherit`
+            color: `inherit`,
           }}
           to={`/`}
         >
@@ -56,7 +56,7 @@ const Header = ({ location, title }) => {
         marginBottom: rhythm(2),
         display: `flex`,
         justifyContent: `space-between`,
-        alignItems: `center`
+        alignItems: `center`,
       }}
     >
       {header}
@@ -65,16 +65,17 @@ const Header = ({ location, title }) => {
           {({ theme, toggleTheme }) => (
             <a
               style={{
-                ...scale(-0.2),
-                cursor: `pointer`
+                ...scale(0.5),
+                boxShadow: `none`,
+                cursor: `pointer`,
               }}
               href="/"
               onClick={e => {
-                e.preventDefault();
-                toggleTheme(theme === "dark" ? "light" : "dark");
+                e.preventDefault()
+                toggleTheme(theme === "dark" ? "light" : "dark")
               }}
             >
-              {theme === "dark" ? "light" : "dark"}{" "}theme
+              {theme === "dark" ? "☀️" : "🌙"}
             </a>
           )}
         </ThemeToggler>
