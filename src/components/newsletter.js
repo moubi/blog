@@ -1,30 +1,54 @@
 import React from "react"
-import { rhythm } from "../utils/typography"
-
 import styles from "./newsletter.module.css"
 
 export default function Newsletter() {
   return (
-    <section className={styles.container}>
-      <section className={styles.one}>
+    <section
+      className={styles.container}
+      style={{
+        backgroundColor: "var(--bgHighlight)",
+      }}
+    >
+      <div>
         <span role="img" aria-label="Envelope icon" className={styles.logo}>
-          📩
+          ✉️
         </span>
         <h2 className={styles.heading}>Join the mailing list</h2>
         <p>
-          Get updates about writings and open source projects I am working on.
-          React, javascript and front-end.
+          Get updates on writings and tools I am involved in. React, javascript
+          and front-end.
         </p>
-        <form>
-          <input type="text" placeholder="Enter your email" />
+      </div>
+      <form className={styles.form}>
+        <input
+          style={{
+            border: "var(--borderInput)",
+          }}
+          type="text"
+          placeholder="Name"
+        />
+        <input
+          style={{
+            border: "var(--borderInput)",
+          }}
+          type="text"
+          placeholder="Email"
+        />
+        <br />
+        <button
+          className={styles.btn}
+          style={{
+            color: "var(--textButton)",
+          }}
+        >
+          Subscribe
+        </button>
+        <p>
+          Practical information only.
           <br />
-          <button className={styles.btn}>subscribe</button>
-        </form>
-      </section>
-      <section className={styles.two}>
-        <h3>thank you for subscribing !</h3>
-        <div className={styles.close}></div>
-      </section>
+          Unnsubscribe at any time.
+        </p>
+      </form>
     </section>
   )
 }

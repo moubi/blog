@@ -1,9 +1,12 @@
 /* Theming */
 body {
-    --bg: fff;
+    --bg: #fff;
+    --bgHighlight: #f9f9f9;
     --textNormal: #222;
     --textTitle: #222;
     --textLink: blue;
+    --textButton: #fff;
+    --borderInput: 1px solid #efd7b0;
     --hr: hsla(0, 0%, 0%, 0.2);
 
     background-color: var(--bg);
@@ -12,8 +15,11 @@ body {
 
 body.dark {
     --bg: #282c35;
+    --bgHighlight: #21242a;
     --textNormal: rgba(255, 255, 255, 0.9);
     --textTitle: #fff;
     --textLink: #eab768;
+    --textButton: #fff;
+    --borderInput: none;
     --hr: hsla(0, 0%, 100%, 0.2);
 }
