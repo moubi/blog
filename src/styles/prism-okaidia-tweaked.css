@@ -19,7 +19,8 @@
  * and overflow that we removed from <pre>.
  */
 .gatsby-highlight {
-  background-color: var(--bgHighlight);
+  /* Same color as --bgHighlight for dark theme */
+  background-color: #21242a;
   border-radius: 4px;
   margin: 0.5em -1.2em;
   padding: 1.2em;
@@ -34,7 +35,8 @@
  * 3. Adjust the position of the line numbers
  */
 .gatsby-highlight pre[class*="language-"] {
-  background-color: var(--bgHighlight);
+  /* Same color as --bgHighlight for dark theme */
+  background-color: #21242a;
   margin: 0;
   padding: 0;
   overflow: initial;
