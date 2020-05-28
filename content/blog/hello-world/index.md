@@ -2,6 +2,7 @@
 title: Hello World
 date: "2015-05-01"
 description: "This is my first blog post."
+hackerNewsId: "1231232434"
 ---
 
 This is my first post on my new fake blog! How exciting!
