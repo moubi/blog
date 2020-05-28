@@ -16,7 +16,7 @@ export default function Share({ postDetails, location }) {
       Discuss on: &nbsp;&nbsp;
       <a
         target="_blank"
-        rel="noopener"
+        rel="noreferrer"
         href={`http://twitter.com/share?text=${postTitle}&url=${postURL}`}
       >
         Twitter
@@ -24,7 +24,7 @@ export default function Share({ postDetails, location }) {
       {" • "}
       <a
         target="_blank"
-        rel="noopener"
+        rel="noreferrer"
         href={`https://news.ycombinator.com/item?id=${hackerNewsId}`}
       >
         HackerNews
@@ -32,7 +32,7 @@ export default function Share({ postDetails, location }) {
       {" • "}
       <a
         target="_blank"
-        rel="noopener"
+        rel="noreferrer"
         href={`https://www.linkedin.com/sharing/share-offsite/?url=${postURL}`}
       >
         Linkedin
