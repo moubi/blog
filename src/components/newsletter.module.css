@@ -1,6 +1,7 @@
 .container {
   display: flex;
   align-items: center;
+  min-width: 60%;
   min-height: 320px;
   margin: 50px 0;
   border-radius: 4px;
@@ -28,7 +29,6 @@
 
 .form {
   display: block;
-  min-width: 40%;
   margin-top: 20px;
 }
 

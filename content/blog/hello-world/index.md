@@ -19,8 +19,8 @@ import PropTypes from "prop-types";
 // Object props does have an order
 const sortObj = obj =>
   Object.keys(obj)
-    .sort()
-    .reduce(function(result, key) {
+    .sort() // highlight-line
+    .reduce(function(result, key) { // highlight-line
       result[key] = obj[key];
       return result;
     }, {});

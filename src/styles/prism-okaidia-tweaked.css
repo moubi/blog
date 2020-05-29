@@ -5,19 +5,15 @@
  */
 
 .gatsby-highlight-code-line {
-  background-color: #feb;
+  background-color: hsla(24, 20%, 50%, .08);
   display: block;
-  margin-right: -1em;
-  margin-left: -1em;
+  margin-right: -1.2em;
+  margin-left: -1.2em;
   padding-right: 1em;
   padding-left: 0.75em;
-  border-left: 0.25em solid #f99;
+  border-left: 0.25em solid #a99;
 }
 
-/**
- * Add back the container background-color, border-radius, padding, margin
- * and overflow that we removed from <pre>.
- */
 .gatsby-highlight {
   /* Same color as --bgHighlight for dark theme */
   background-color: #21242a;
@@ -27,13 +23,6 @@
   overflow: auto;
 }
 
-/**
- * Remove the default PrismJS theme background-color, border-radius, margin,
- * padding and overflow.
- * 1. Make the element just wide enough to fit its content.
- * 2. Always fill the visible space in .gatsby-highlight.
- * 3. Adjust the position of the line numbers
- */
 .gatsby-highlight pre[class*="language-"] {
   /* Same color as --bgHighlight for dark theme */
   background-color: #21242a;
