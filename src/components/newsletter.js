@@ -16,8 +16,8 @@ export default function Newsletter() {
         </span>
         <h2 className={styles.heading}>Join the mailing list</h2>
         <p>
-          Get updates on my latest writings. <br /> React, javascript and
-          front-end.
+          Get latest updates from my journey as javascript dev. React and
+          javascript tools, recepies, everyday callenges.
         </p>
       </div>
       <form
