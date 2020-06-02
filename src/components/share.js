@@ -22,14 +22,18 @@ export default function Share({ postDetails, location }) {
         Twitter
       </a>
       {" • "}
-      <a
-        target="_blank"
-        rel="noreferrer"
-        href={`https://news.ycombinator.com/item?id=${hackerNewsId}`}
-      >
-        HackerNews
-      </a>
-      {" • "}
+      {hackerNewsId && (
+        <>
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href={`https://news.ycombinator.com/item?id=${hackerNewsId}`}
+          >
+            HackerNews
+          </a>
+          {" • "}
+        </>
+      )}
       <a
         target="_blank"
         rel="noreferrer"
