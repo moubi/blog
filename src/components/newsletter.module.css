@@ -1,13 +1,16 @@
 .container {
   display: flex;
   align-items: center;
-  flex-basis: 60%;
   min-height: 320px;
   margin: 50px 0;
   border-radius: 4px;
   position: relative;
   box-shadow: 0 0 12px rgba(0, 0, 0, .1);
   overflow: hidden;
+}
+
+.container > div {
+  flex-basis: 60%;
 }
 
 .logo {
