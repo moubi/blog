@@ -1,165 +1,33 @@
 ---
 title: Hello World
 date: "2015-05-01"
-description: "This is my first blog post."
-hackerNewsId: "1231232434"
+description: "Blog about React, Javascript and Front-end. My perspective on common challenges as a web developer."
+hackerNewsId: ""
 ---
 
-This is my first post on my new fake blog! How exciting!
+I decided to start blogging. I need a space to save my experience and knowledge that could refer myself and others to.
 
-I'm sure I'll write a lot more interesting things in the future.
+## Why
+Because if you don't write it, it will be lost. Talking with paper helps better understand things you believe are clear, but you don't actually know very well. And at the end it is a good way to contribute value to the community.
 
-Oh, and here's a great quote from this Wikipedia on
-[salted duck eggs](https://en.wikipedia.org/wiki/Salted_duck_egg).
+## Another React/Javascript blog?
+Using React and Javascript on a daily basis is with no doubt enjoyable process that I never regret about. But like any other programming language it often challenges you with the following:
+ - **complex**, but rarely complicated problems
+ - **repetitive** tasks and activities
+ - **deep understanding** of what's going on
+ - **metaphor** (mental model) about how things work
+ - **convey knowledge** to others
 
-```javascript
-import { useState, useEffect, useRef, useCallback } from "react";
-import PropTypes from "prop-types";
+I want a reference place with solutions/guides. I want examples, easy to digest and on the point. Things in programming are often opaque, so I also want to understand with the help of something I already know.
 
-// Object props does have an order
-const sortObj = obj =>
-  Object.keys(obj)
-    .sort() // highlight-line
-    .reduce(function(result, key) { // highlight-line
-      result[key] = obj[key];
-      return result;
-    }, {});
+*This is what the blog should be about.*
 
-const errorsFromInitialValues = initial =>
-  Object.keys(initial).reduce(
-    (errors, field) => ({ ...errors, [field]: false }),
-    {}
-  );
+## Inspiration
+It is also dedicated to React, right? So, it's built based on [Gatsby](https://www.gatsbyjs.org/)'s default [starter-blog](https://github.com/gatsbyjs/gatsby-starter-blog) (with some edits) and inspired by [Dan Abramov](https://twitter.com/dan_abramov)'s [overreacted.io](overreacted.io).
 
-export default function Enform({ initial, validation, children }) {
-  const [values, setValues] = useState({ ...initial });
-  const [errors, setErrors] = useState(() => errorsFromInitialValues(initial));
-  const ref = useRef(sortObj(initial));
+## Recourses
+You probably don't know me yet or may not care. A good starting point in both cases is [my webpage](https://webup.org), [twitter](https://twitter.com/moubi), [github](https://github.com/moubi) or [linkedin](https://www.linkedin.com/in/moubi/).
 
-  const reset = useCallback(() => {
-    setValues({ ...initial });
-    setErrors(errorsFromInitialValues(initial));
-  }, [initial]);
-
-  useEffect(() => {
-    // That should cover most of the use cases.
-    // JSON.stringify is reliable here.
-    // Enform will sort before compare stringified versions of the two object
-    // That gives a higher chance for success without the need of deep equal.
-    // Note: JSON.stringify doesn't handle javascript Sets and Maps.
-    // Using such in forms is considered more of an edge case and should be
-    // handled by consumer components by turning these into an object or array
-    const sortedInitial = sortObj(initial);
-    if (JSON.stringify(sortedInitial) !== JSON.stringify(ref.current)) {
-      reset();
-      ref.current = sortedInitial;
-    }
-  }, [initial, reset]);
-
-  const isDirty = useCallback(() => {
-    const fields = Object.keys(initial);
-    return fields.some(field => initial[field] !== values[field]);
-  }, [initial, values]);
-
-  const validate = useCallback((onValid = () => {}) => {
-    if (!validation) return true;
-    const newErrors = {};
-
-    for (let i in validation) {
-      newErrors[i] = validation[i](values);
-    }
-
-    const isValid = !Object.values(newErrors).some(err => err);
-
-    setErrors({
-      ...errors,
-      ...newErrors
-    });
-
-    if (isValid) {
-      onValid(values);
-    }
-  }, [validation, errors, values]);
-
-  const validateField = useCallback(name => {
-    if (typeof values[name] !== "undefined") {
-      if (typeof validation[name] === "function") {
-        const isInvalid = validation[name](values);
-        setErrors({
-          ...errors,
-          [name]: isInvalid
-        });
-        // Returning the oposite: is the field valid
-        return !isInvalid;
-      }
-      return true;
-    }
-  }, [values, validation, errors]);
-
-  const clearErrors = useCallback(() => {
-    setErrors(errorsFromInitialValues(initial));
-  }, [initial]);
-
-  const clearError = useCallback(name => {
-    // Use an updater function here since this method is often used in
-    // combination with onChange(). Both are setting state, so we don't
-    // want to lose changes.
-    setErrors(prevErrors => ({
-      ...prevErrors,
-      [name]: false
-    }));
-  }, []);
-
-  const onSubmit = useCallback(submitCallback => {
-    validate(values => {
-      if (typeof submitCallback === "function") {
-        submitCallback(values);
-      }
-    });
-  }, [validate]);
-
-  const onChange = useCallback((name, value) => {
-    setValues({
-      ...values,
-      [name]: value
-    });
-    errors[name] && clearError(name);
-  }, [values, errors, clearError]);
-
-  // This method is usually used with API calls to programmatically set
-  // field errors comming as a payload and not as a result of direct user input
-  const setErrorsIfFieldsExist = useCallback(newErrors => {
-    if (typeof newErrors !== "object") return false;
-    const errorsCopy = { ...errors };
-
-    Object.keys(newErrors).forEach(fieldName => {
-      if (fieldName in errorsCopy) {
-        errorsCopy[fieldName] = newErrors[fieldName];
-      }
-    });
-
-    setErrors({ ...errorsCopy });
-  }, [errors]);
-
-  return children({
-    values,
-    errors,
-    onChange,
-    onSubmit,
-    isDirty,
-    validateField,
-    clearError,
-    clearErrors,
-    setErrors: setErrorsIfFieldsExist,
-    reset
-  });
-}
-
-Enform.propTypes = {
-  children: PropTypes.func.isRequired,
-  initial: PropTypes.object.isRequired,
-  validation: PropTypes.object
-};
-```
-
-![Chinese Salty Egg](./salty_egg.jpg)
+<div align="center">
+ <h2>👋</h2>
+</div>
