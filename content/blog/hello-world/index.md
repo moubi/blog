@@ -1,6 +1,6 @@
 ---
 title: Hello World
-date: "2015-05-01"
+date: "2020-06-04"
 description: "Blog about React, Javascript and Front-end. My perspective on common challenges as a web developer."
 hackerNewsId: ""
 ---

@@ -4,7 +4,7 @@ module.exports = {
     title: `webup.org/blog`,
     author: {
       name: `Miroslav Nikolov`,
-      summary: `I write about my Javascript, React and Open source journey.`,
+      summary: `I write about Javascript, React and Open source.`,
     },
     description: `A blog about React, front-end, open source. Perspective, thoughts and solutions on common challenges as a web developer`,
     siteUrl: `https://webup.org/blog`,
@@ -58,7 +58,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
+        trackingId: `UA-161687762-1`,
       },
     },
     `gatsby-plugin-feed`,
@@ -71,7 +71,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `content/assets/profile-pic.jpg`,
       },
     },
     `gatsby-plugin-react-helmet`,
