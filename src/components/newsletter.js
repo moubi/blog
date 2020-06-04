@@ -31,9 +31,20 @@ export default function Newsletter() {
         action="https://webup.us18.list-manage.com/subscribe/post"
         method="post"
       >
-        <input type="hidden" name="u" value="a8b6e7feef85415df77a72883" />
-        <input type="hidden" name="id" value="a1d768b4bc" />
         <input
+          aria-label="Mailchimp api field 1"
+          type="hidden"
+          name="u"
+          value="a8b6e7feef85415df77a72883"
+        />
+        <input
+          aria-label="Mailchimp api field 2"
+          type="hidden"
+          name="id"
+          value="a1d768b4bc"
+        />
+        <input
+          aria-label="Name field"
           style={{
             border: "var(--borderInput)",
           }}
@@ -44,6 +55,7 @@ export default function Newsletter() {
           id="MERGE2"
         />
         <input
+          aria-label="Email field"
           style={{
             border: "var(--borderInput)",
           }}
