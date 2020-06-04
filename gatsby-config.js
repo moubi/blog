@@ -4,9 +4,9 @@ module.exports = {
     title: `webup.org/blog`,
     author: {
       name: `Miroslav Nikolov`,
-      summary: `I write about Javascript, React and Open source.`,
+      summary: `My two cents on Javascript, React and Open source.`,
     },
-    description: `A blog about React, front-end, open source. Perspective, thoughts and solutions on common challenges as a web developer`,
+    description: `A blog about React, front-end, open source. Personal perspective, thoughts and solutions of common challenges as a web developer`,
     siteUrl: `https://webup.org/blog`,
     social: {
       twitter: `moubi`,
@@ -67,6 +67,7 @@ module.exports = {
       options: {
         name: `Blog by Miroslav Nikolov`,
         short_name: `webup.org/blog`,
+        description: `A blog about React, front-end, open source by Miroslav Nikolov`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
