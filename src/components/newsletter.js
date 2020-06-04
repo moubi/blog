@@ -7,17 +7,23 @@ export default function Newsletter() {
       className={styles.container}
       style={{
         backgroundColor: "var(--bgHighlight)",
-        fontFamily: "var(--secondaryFontFamily)",
       }}
     >
       <div>
         <span role="img" aria-label="Envelope icon" className={styles.logo}>
           ✉️
         </span>
-        <h2 className={styles.heading}>Join the mailing list</h2>
+        <h2
+          className={styles.heading}
+          style={{
+            fontFamily: "var(--secondaryFontFamily)",
+          }}
+        >
+          Join the mailing list
+        </h2>
         <p>
           Get latest updates from my journey as javascript dev. React and
-          javascript tools, recepies, everyday callenges.
+          javascript tools, recipes, everyday challenges.
         </p>
       </div>
       <form

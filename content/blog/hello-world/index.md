@@ -5,7 +5,7 @@ description: "Blog about React, Javascript and Front-end. My perspective on comm
 hackerNewsId: ""
 ---
 
-I decided to start blogging. I need a space to save my experience and knowledge that could refer myself and others to.
+I need a space to store my experience and knowledge that could refer myself and others to when necessary. So this blog was born.
 
 ## Why
 Because if you don't write it, it will be lost. Talking with paper helps better understand things you believe are clear, but you don't actually know very well. And at the end it is a good way to contribute value to the community.

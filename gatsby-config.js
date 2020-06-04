@@ -1,11 +1,12 @@
 module.exports = {
+  pathPrefix: `/blog`,
   siteMetadata: {
     title: `webup.org/blog`,
     author: {
       name: `Miroslav Nikolov`,
-      summary: `I do Javascript, React and open source.`,
+      summary: `I write about my Javascript, React and Open source journey.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    description: `A blog about React, front-end, open source. Perspective, thoughts and solutions on common challenges as a web developer`,
     siteUrl: `https://webup.org/blog`,
     social: {
       twitter: `moubi`,
@@ -65,7 +66,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Blog by Miroslav Nikolov`,
-        short_name: `GatsbyJS`,
+        short_name: `webup.org/blog`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,

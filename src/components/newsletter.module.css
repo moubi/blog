@@ -3,6 +3,8 @@
   align-items: center;
   min-height: 320px;
   margin: 50px 0;
+  font-family: system-ui, -apple-system, "BlinkMacSystemFont",
+  "Segoe UI", "Roboto";
   border-radius: 4px;
   position: relative;
   box-shadow: 0 0 12px rgba(0, 0, 0, .1);
@@ -23,7 +25,6 @@
 }
 
 .heading {
-  font-family: inherit;
   margin-top: 30px;
   font-size: 20px;
   font-weight: 900;

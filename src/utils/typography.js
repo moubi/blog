@@ -36,12 +36,14 @@ Wordpress2016.overrideThemeStyles = () => ({
     fontSize: typography.rhythm(0.5),
   },
   "header h3": {
-    fontWeight: 800,
     color: "var(--textLink)",
     fontFamily: "var(--secondaryFontFamily)",
   },
   small: {
     color: "var(--textNormal)",
+  },
+  strong: {
+    fontWeight: 900,
   },
 })
 delete Wordpress2016.googleFonts
