@@ -23,7 +23,7 @@ I want a reference place with solutions/guides. I want examples, easy to digest 
 *This is what the blog should be about.*
 
 ## Inspiration
-It is also dedicated to React, right? So, it's built based on [Gatsby](https://www.gatsbyjs.org/)'s default [starter-blog](https://github.com/gatsbyjs/gatsby-starter-blog) (with some edits) and inspired by [Dan Abramov](https://twitter.com/dan_abramov)'s [overreacted.io](overreacted.io).
+It is also dedicated to React, right? So, it's built based on [Gatsby](https://www.gatsbyjs.org/)'s default [starter-blog](https://github.com/gatsbyjs/gatsby-starter-blog) (with some edits) and inspired by [Dan Abramov](https://twitter.com/dan_abramov)'s [overreacted.io](https://overreacted.io).
 
 ## Recourses
 You probably don't know me yet or may not care. A good starting point in both cases is [my webpage](https://webup.org), [twitter](https://twitter.com/moubi), [github](https://github.com/moubi) or [linkedin](https://www.linkedin.com/in/moubi/).
