@@ -1,6 +1,7 @@
 import React from "react"
 import { useSiteMetadata } from "../hooks/useSiteMetadata"
 import { rhythm } from "../utils/typography"
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 const Footer = () => {
   const data = useSiteMetadata()
@@ -9,25 +10,25 @@ const Footer = () => {
   return (
     <footer style={{ marginTop: rhythm(4) }}>
       <p>
-        <a
+        <OutboundLink
           href={`https://twitter.com/${social.twitter}`}
           target="_blank"
           rel="noreferrer"
         >
           twitter
-        </a>{" "}
+        </OutboundLink>{" "}
         {" • "}
-        <a
+        <OutboundLink
           href={`https://github.com/${social.github}`}
           target="_blank"
           rel="noreferrer"
         >
           github
-        </a>{" "}
+        </OutboundLink>{" "}
         {" • "}
-        <a href={social.about} target="_blank" rel="noreferrer">
+        <OutboundLink href={social.about} target="_blank" rel="noreferrer">
           about
-        </a>
+        </OutboundLink>
       </p>
     </footer>
   )

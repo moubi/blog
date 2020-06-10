@@ -7,10 +7,10 @@
 .gatsby-highlight-code-line {
   background-color: hsla(24, 20%, 50%, .08);
   display: block;
-  margin-right: -1.2em;
+  margin-right: -1.4em;
   margin-left: -1.4em;
-  padding-right: 1em;
-  padding-left: 0.75em;
+  padding-right: 1.15em;
+  padding-left: 1.15em;
   border-left: 0.25em solid #a99;
 }
 
@@ -18,7 +18,7 @@
   /* Same color as --bgHighlight for dark theme */
   background-color: #21242a;
   border-radius: 4px;
-  margin: 0.5em -1.2em;
+  margin: 1.75em -1.2em;
   padding: 1.2em;
   overflow: auto;
 }
@@ -72,9 +72,12 @@ pre[class*="language-"] {
 
 /* Inline code */
 :not(pre) > code[class*="language-"] {
-	padding: .1em;
-	border-radius: .3em;
-	white-space: normal;
+  font-size: 90%;
+  white-space: normal;
+  padding: .2em .4em;
+  color: var(--textNormal);
+  background: var(--inlineCodeBg);
+  border-radius: 3px;
 }
 
 .token.comment,

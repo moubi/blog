@@ -1,6 +1,7 @@
 import React from "react"
 import { useSiteMetadata } from "../hooks/useSiteMetadata"
 import Image from "gatsby-image"
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 import { rhythm } from "../utils/typography"
 
@@ -29,13 +30,15 @@ const Bio = () => {
         }}
       />
       <p>
-        Blog by <a href="https://webup.org">{author.name}</a> (<a href={`https://twitter.com/${social.twitter}`}>
+        Blog by <OutboundLink href={social.about}>{author.name}</OutboundLink> (
+        <OutboundLink href={`https://twitter.com/${social.twitter}`}>
           twitter
-        </a>
+        </OutboundLink>
         {`, `}
-        <a href={`https://github.com/${social.github}`}>
+        <OutboundLink href={`https://github.com/${social.github}`}>
           github
-        </a>).
+        </OutboundLink>
+        ).
         <br />
         {author.summary}
       </p>

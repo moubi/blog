@@ -27,7 +27,18 @@ Wordpress2016.overrideThemeStyles = () => ({
     color: "var(--textTitle)",
   },
   "h2, h3, h4, h5, h6, li": {
+    position: "relative",
     color: "var(--textNormal)",
+  },
+  "a.header-link": {
+    display: "none",
+    float: "left",
+  },
+  "h2:hover a.header-link, h3:hover a.header-link, h4:hover a.header-link, h5:hover a.header-link, h6:hover a.header-link": {
+    marginLeft: "-25px",
+    paddingRight: "4px",
+    display: "inline-block",
+    boxShadow: "none",
   },
   h4: {
     textTransform: "none",

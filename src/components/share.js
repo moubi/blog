@@ -1,5 +1,6 @@
 import React from "react"
 import { rhythm } from "../utils/typography"
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 export default function Share({ postDetails, location }) {
   const postURL = encodeURIComponent(location.href)
@@ -14,33 +15,33 @@ export default function Share({ postDetails, location }) {
       }}
     >
       Discuss on: &nbsp;&nbsp;
-      <a
+      <OutboundLink
         target="_blank"
         rel="noreferrer"
         href={`http://twitter.com/share?text=${postTitle}&url=${postURL}`}
       >
         Twitter
-      </a>
+      </OutboundLink>
       {" • "}
       {hackerNewsId && (
         <>
-          <a
+          <OutboundLink
             target="_blank"
             rel="noreferrer"
             href={`https://news.ycombinator.com/item?id=${hackerNewsId}`}
           >
             HackerNews
-          </a>
+          </OutboundLink>
           {" • "}
         </>
       )}
-      <a
+      <OutboundLink
         target="_blank"
         rel="noreferrer"
         href={`https://www.linkedin.com/sharing/share-offsite/?url=${postURL}`}
       >
         Linkedin
-      </a>
+      </OutboundLink>
     </p>
   )
 }

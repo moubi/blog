@@ -7,6 +7,7 @@ body {
     --textLink: #ce9234;
     --textButton: #fff;
     --borderInput: 1px solid #efd7b0;
+    --inlineCodeBg: rgba(27, 31, 35, .06);
     --secondaryFontFamily: "Montserrat", sans-serif;
     --hr: hsla(0, 0%, 0%, 0.2);
 
@@ -22,6 +23,7 @@ body.dark {
     --textLink: #eab768;
     --textButton: #fff;
     --borderInput: none;
+    --inlineCodeBg: #21242a;
     --secondaryFontFamily: "Montserrat", sans-serif;
     --hr: hsla(0, 0%, 100%, 0.2);
 }
