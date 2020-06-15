@@ -5,13 +5,13 @@
  */
 
 .gatsby-highlight-code-line {
-  background-color: hsla(24, 20%, 50%, .08);
+  background-color: hsla(24, 20%, 50%, .09);
   display: block;
   margin-right: -1.4em;
   margin-left: -1.4em;
   padding-right: 1.15em;
   padding-left: 1.15em;
-  border-left: 0.25em solid #a99;
+  border-left: 0.25em solid var(--textLink);
 }
 
 .gatsby-highlight {
@@ -73,6 +73,8 @@ pre[class*="language-"] {
 /* Inline code */
 :not(pre) > code[class*="language-"] {
   font-size: 90%;
+  font-weight: 600;
+  text-shadow: none;
   white-space: normal;
   padding: .2em .4em;
   color: var(--textNormal);
