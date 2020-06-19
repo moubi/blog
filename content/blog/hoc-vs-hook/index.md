@@ -1,7 +1,7 @@
 ---
 title: "Render props vs hooks"
-date: "2020-06-10"
-description: "Did hooks replace render props for state management? Should I still use the good old pattern or is it obsolete?"
+date: "2020-06-22"
+description: "Did hooks replace render props? Not at all. The good old pattern works and still provides high value in the common case."
 hackerNewsId: ""
 ---
 
