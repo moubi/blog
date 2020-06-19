@@ -6,11 +6,11 @@ hackerNewsId: ""
 ---
 
 Can you guess which code snippet is more efficient and why?
-<div style="display: inline-block; width: 322px; border-right: 1px solid #343842;">
-  <img alt="Form with render props" src="render-props.png">
-</div>
-<div style="display: inline-block; width: 303px;">
+<div style="display: inline-block; width: 304px; border-right: 1px solid #343842;">
   <img alt="Form with useState" src="hooks.png">
+</div>
+<div style="display: inline-block; width: 322px;">
+  <img alt="Form with render props" src="render-props.png">
 </div>
 
 This [twitter discussion](https://twitter.com/moubi/status/1271429303574556672) started with the same question recently. I wanted to know if people have strong opinion about hooks and render props.
@@ -397,7 +397,17 @@ function Page() {
 
 Of course you can always break the useful pattern. Imagine updating some `<Page />` related state as a result of form manipulation. It will result in additional renders. But then, it won't be FormManager's fault.
 
-Now if your OSS library exports component with a render prop instead, your users get that extra flexibility. They are no longer forced to create additional components.
+Now if your OSS library exports component with a render prop instead, its users get that extra flexibility. They are no longer forced to create additional components.
+
+## <a class="header-link" href="#hooks-and-render-props-in-action" id="hooks-and-render-props-in-action">#</a> Hooks and render props in action
+If you put these two implementations side by side:
+
+<img alt="Comparison between render props and custom hook form" src="forms.gif">
+<p align="center">
+<sup>Feel free to play with <a target="_blank" href="https://codesandbox.io/s/forms-that-cause-re-render-issue-sd6tn?fontsize=14&hidenavigation=1&theme=dark">that set up</a>.<sup>
+</p>
+
+Voilà. The comparison shows in action what would be the side effect of each form. The one on the left (custom hook) is causing re-renders in all Page children, while the one on the right (render prop) doesn't.
 
 ## <a class="header-link" href="#final-words" id="final-words">#</a> Final words
 **Render props are very useful if you want to isolate part of the jsx and inject some state without introducing side effects to your component.**
