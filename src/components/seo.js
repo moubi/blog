@@ -69,6 +69,10 @@ const SEO = ({ description, lang, meta, title }) => {
           name: `twitter:description`,
           content: metaDescription,
         },
+        {
+          name: `monetization`,
+          content: `$ilp.uphold.com/p2rbx3hp3zQb`,
+        },
       ].concat(meta)}
     />
   )
