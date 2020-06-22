@@ -19,11 +19,12 @@ const Confirm = ({ data, location }) => {
           Thank you for joining
         </h1>
         <p>
-          I hope this newsletter is useful and interesting. <br />
+          I hope this newsletter is useful and interesting.
+          <br />
           <span role="img" aria-label="envelope">
             📩
           </span>{" "}
-          &nbsp;Check your Inbox for a welcome message.
+          &nbsp;Check your Inbox.
         </p>
       </article>
     </Layout>
