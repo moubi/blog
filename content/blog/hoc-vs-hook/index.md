@@ -1,8 +1,9 @@
 ---
 title: "Render props vs hooks"
 date: "2020-06-22"
-description: "Did hooks replace render props? Not at all. The good old pattern works and still provides high value in the common case."
+description: "Who said render props are obsolete? The good old pattern is still valid for the common use case where hooks may not always be the right choice."
 hackerNewsId: ""
+reddit: ""
 ---
 
 Can you guess which code snippet is more efficient and why?
@@ -19,17 +20,17 @@ This [twitter discussion](https://twitter.com/moubi/status/1271429303574556672) 
  - is often **more flexible and efficient** than pure hooks solution when it comes to state management.
  - is still suitable for **the common** case.
 
-But the truth is, hooks and render props shake hands and play well together. If you must decide between the two, though, let's put that decision on stress.
+The truth is, hooks and render props shake hands and play well together. But if you must decide between either of the two, though, let's put that decision on stress.
 
 Read on...
 
-_If your are not familiar with hooks and the render props pattern - don't worry - a good starting point is [Render Props](https://reactjs.org/docs/render-props.html), [Use a Render Prop!](https://cdb.reacttraining.com/use-a-render-prop-50de598f11ce) and [Hooks at a Glance](https://reactjs.org/docs/hooks-overview.html) from the React docs. A list of resources is also available at the end._
+_If your are not familiar with hooks and the render props pattern - don't worry - a good starting point is [Render Props](https://reactjs.org/docs/render-props.html), [Use a Render Prop!](https://cdb.reacttraining.com/use-a-render-prop-50de598f11ce) and [Hooks at a Glance](https://reactjs.org/docs/hooks-overview.html). A list of resources is also available at the end._
 
 ## <a class="header-link" href="#render-props-are-not-dead" id="render-props-are-not-dead">#</a> Render Props are Not Dead
 
 [A talk](https://www.youtube.com/watch?v=pn0pIgdQvhU&list=PLCC436JpVnK0Q4WHoB85ZYBwcCyTaMgAl&index=6) with that name by [Erik Rasmussen](https://twitter.com/erikras) was the trigger for this writing. It outlines how we got from HoCs to hooks. Watch it, it should make things clearer.
 
-I remember the voice in my head when hit the play button on that React Europe video: _"Wait, should I do another rewrite of my library, getting rid of the render props I so much like"_. At that time **v2 of [Enform](https://github.com/moubi/enform)** was released and I was happy with it. Immediate v3 rewrite would destroy the positive feeling.
+I remember the voice in my head when hit the play button on that React Europe video: _"Wait, should I do another rewrite of my library, getting rid of the render props I so much like"_. At that time **v2 of [Enform](https://github.com/moubi/enform)** was released and I was happy with it. An immediate v3 rewrite would destroy my positive feeling.
 
 **May be you:**
  - work with hooks, but may not fully understand them
@@ -78,7 +79,7 @@ class Form extends Component {
 <sup>The form is intentionally kept simpler.<sup>
 </p>
 
-The snippet may make you think: _"This is a recipe for disaster"_. Right, and state is the primary suspect. Adding to that, usually you have more fields involved and need to handle validation, submission, API calls, error messages too. Of course, as a result **your component will grow. Then you would like to relief the state logic by abstracting it somehow.**
+The snippet may force you think: _"This is a recipe for disaster"_. Right, and state is the primary suspect. Adding to that, usually you have more fields involved in the form and need to handle validation, submission, API calls, error messages too. Of course, as a result **your component will grow. Then you would like to relief the state logic by abstracting it somehow.**
 
 ## <a class="header-link" href="#handling-state-abstraction-with-hooks" id="handling-state-abstraction-with-hooks">#</a> Handling state abstraction with hooks
 Look at this simplified code:
@@ -114,7 +115,7 @@ function Form() {
 <sup>Try it out in <a target="_blank" href="https://codesandbox.io/embed/controlled-form-with-hooks-1e9o7?expanddevtools=1&fontsize=14&hidenavigation=1&module=%2Fsrc%2FApp.js&theme=dark">codesandbox</a><sup>
 </p>
 
-It is the same form component, but using function instead of class and the `useState` hook.  Simple move that already made things nicer. Including more fields to this controlled form is as easy as handling more state in the component.
+It is the same form component, but using a function instead of a class and the `useState` hook.  Simple move that already made things nicer. Including more fields to this controlled form is as easy as handling more state in the component.
 
 ```jsx
 const [name, setName] = useState("");
@@ -124,7 +125,7 @@ const [address, setAddress] = useState("");  // highlight-line
 ...
 ```
 
-Using hooks and functional components is already a win. OK, but you bump into another trouble - component state is growing together with the form. There are two options to address that further. Create separate form component or custom hook to hold the state heavy lifting.
+Using hooks and functional components is already a win. OK, but you bump into another trouble - component state is growing together with the form. From that point there are two options to address the obstacle. Create separate form component or custom hook to hold the state heavy lifting.
 
 ### <a class="header-link" href="#form-custom-hook" id="form-custom-hook">#</a> Form custom hook
 I assume you know how to build one. There are many examples out there, so let's not focus on the `useForm` implementation below. What is interesting is how it improves our component and how it gets used. Remember we are slowly getting to the pain point - would custom hook be the best approach here.
@@ -162,7 +163,7 @@ function Form() {
 Ideally adding more logic would result in just the `jsx` (the render) part growing, while `useForm` manages the state for you.
 
 _Side note:_
-`useForm()` (it's a pretty common name) may miss-reference you to [react-hook-form](https://github.com/react-hook-form/react-hook-form). The name matches, but the idea is different. `react-hook-form` is not solving the state problem here, but avoiding it by having the form as uncontrolled instead.
+`useForm()` (it's a pretty common name) may miss-reference you to [react-hook-form](https://github.com/react-hook-form/react-hook-form). The name matches, but the idea is different. `react-hook-form` is not solving the state problem described here, but avoiding it by having the form as uncontrolled instead.
 
 Getting back to our example. Adding errors and submit features:
 ```jsx{2}
@@ -237,7 +238,7 @@ function Form() {
 }
 ```
 <p align="center">
-<sup>Want to try it out or curious about <code class="language-text">FormManager</code>'s implementation? Here is the <a target="_blank" href="https://codesandbox.io/s/controlled-form-with-render-props-xvil0?expanddevtools=1&fontsize=14&hidenavigation=1&module=%2Fsrc%2FApp.js&theme=dark">codesandbox</a>.<sup>
+<sup>Curious about <code class="language-text">FormManager</code>'s implementation? Here is the <a target="_blank" href="https://codesandbox.io/s/controlled-form-with-render-props-xvil0?expanddevtools=1&fontsize=14&hidenavigation=1&module=%2Fsrc%2FApp.js&theme=dark">codesandbox</a>.<sup>
 </p>
 
 Abstracting the state away in a weird way, right? Yes, this is how it is.
@@ -247,7 +248,7 @@ From the official docs:
 
 **_"...using a prop whose value is a function"_** - exactly what seems awkward when you use render props for first time. Other than that it works similar to `useForm` except `<FormManager />` is just a normal component.
 
-This pattern might be familiar, especially if you are working on third party libraries or using such, which is the case with many of us. I'll skip revealing the logic behind `<FormManager />`, but if you are interested, please ref the codesandbox above.
+This pattern might be familiar, especially if you are working on third party libraries or using such. If you are interested in the logic behind this example, please ref the codesandbox above.
 
 **The render props approach has similar benefits to hooks, but looks strange and sometimes doesn't scale efficiently.** Why is that?
 
@@ -290,7 +291,9 @@ function MyComponent() {
 
 Nested wrapper components with render props. Oh, that doesn't look very promising. It may even trick some people to believe the pattern is obsolete in favour of _"do everything with hooks"_. Hooks [doesn't suffer the nesting issue](https://reactjs.org/docs/hooks-faq.html#do-hooks-replace-render-props-and-higher-order-components), that's true.
 
-But, ff render props had no pros over hooks the article is leading to a dead end. It's not, I promise. There is something else, though, which is not about syntax. Keep on...
+But I suppose, if render props had no pros over hooks the article is leading to a dead end. It's not, I promise. There is something else, though, which is not about syntax.
+
+Keep on...
 
 ## <a class="header-link" href="#reality-check" id="reality-check">#</a> Reality check
 Let's recap. Remember this part from the beginning?
@@ -304,7 +307,7 @@ Let's recap. Remember this part from the beginning?
 </>
 ```
 
-I intentionally left more elements (`<h1 />`) than just a `<form />` in the jsx. It is suppose to serve as a hint, because **in reality some components aren't that simple**. Often they render other components or third party ones which you don't have control over.
+I intentionally left more elements (`<h1 />`) than just the `<form />` in the jsx. It is suppose to serve as a hint, because **in reality some components aren't that simple**. Often they render other components or third party ones which you don't have control over.
 
 A more realistic example would look like so:
 
@@ -344,18 +347,18 @@ There are three general restrictions with hooks:
  2. you have to use functional components
  3. **you may fall into re-render issues**
 
-Skipping the first two... If you have class components and lower version of react you can't use hooks obviously. **The third one, though, is the cornerstone when deciding between hooks and render props.**
+Skipping the first two... If you have class components and lower version of react you can't use hooks obviously. **The third one, however, is the cornerstone when deciding between hooks and render props.**
 
 ### <a class="header-link" href="#you-may-fall-into-re-render-issues" id="you-may-fall-into-re-render-issues">#</a> You may fall into re-render issues
 Given the last example, every time you type in the form fields `setValue` will be called causing the whole `<Page />` component to re-render. Yes, and because you are updating the state, this is expected. But not desirable. **Suddenly filling a form with data becomes very expensive operation.**
 
-React is clever enough to protect you from unnecessary renders, but it won't go against its principles. Every  component has its own catch-ups and you need to work around these, so it's safe against renders. Unfortunately, it may not be the case with `<Header />`, `<Navigation />` and `<Footer />` because, let's imagine, you don't have control over them. Especially with `<SomeOtherThirdPartyComponent />`. Now the unnecessary renders caused by our form start affecting all children in `<Page />`.
+React is clever enough to protect you from unnecessary renders, but it won't go against its principles. Every  component has its own catch-ups and you need to work around these, so it's safe against renders. Unfortunately, it may not be the case with `<Header />`, `<Navigation />` and `<Footer />` because, let's imagine, you don't have time to refactor them. And with `<SomeOtherThirdPartyComponent />` you may even not be able to do so.
 
-You don't have many options here. **Extracting the from in a separate component is the way to go with hooks**. As a consequence - you will need to **repeat that for every form** in your project making the tree grow inevitably.
+Not many options here. **Extracting the from in a separate component is the way to go with hooks**. As a consequence - you will need to **repeat that for every form** in your project making the tree grow inevitably.
 
 What if you are building an OSS library that exports a hook like `useForm`? Do you prefer your users to do the extra extraction step above? Not a big deal you may say. Not a big one, but a less flexible one.
 
-Hooks are not remedy for all problems and they are not intended to serve as such. The shared hypothetic (or not) primer is one of these cases where you may need the extra flexibility.
+Hooks are not remedy for all problems and they are not intended to serve that purpose. The hypothetic (or not) primer above is one of these cases where you may need the extra flexibility.
 
 Use the hooks, but add some sugar.
 
@@ -399,24 +402,24 @@ Of course you can always break the useful pattern. Imagine updating some `<Page 
 
 Now if your OSS library exports component with a render prop instead, its users get that extra flexibility. They are no longer forced to create additional components.
 
-## <a class="header-link" href="#hooks-and-render-props-in-action" id="hooks-and-render-props-in-action">#</a> Hooks and render props in action
+## <a class="header-link" href="#comparison-in-action" id="comparison-in-action">#</a> Comparison in action
 If you put these two implementations side by side:
 
 <img alt="Comparison between render props and custom hook form" src="forms.gif">
 <p align="center">
-<sup>Feel free to play with <a target="_blank" href="https://codesandbox.io/s/forms-that-cause-re-render-issue-sd6tn?fontsize=14&hidenavigation=1&theme=dark">that set up</a>.<sup>
+<sup>Feel free to play with <a target="_blank" href="https://codesandbox.io/s/forms-that-cause-re-render-issue-sd6tn?expanddevtools=1&fontsize=14&hidenavigation=1&theme=dark">that set up</a>.<sup>
 </p>
 
-Voilà. The comparison shows in action what would be the side effect of each form. The one on the left (custom hook) is causing re-renders in all Page children, while the one on the right (render prop) doesn't.
+Voilà. You can now see the render outcome of each form. The one on the left (custom hook) is causing re-renders in all Page children, while the one on the right (render prop) doesn't.
 
 ## <a class="header-link" href="#final-words" id="final-words">#</a> Final words
 **Render props are very useful if you want to isolate part of the jsx and inject some state without introducing side effects to your component.**
 
-It is common that many render prop implementations are using hooks internally so saying _"it's hooks or nothing"_ would be extreme. Hooks support the pattern pretty well and gain the extra flexibility they lack in some situations. This is to consider when deciding between one OR the other approach.
+It is very common that many render prop implementations are using hooks internally so saying _"it's hooks or nothing"_ would be extreme. Hooks support the pattern pretty well and gain the extra flexibility they lack in some situations. This is to consider when deciding between one OR the other approach.
 
-But hey, your OSS library can export both - the wrapper component and the hook. That makes working on open source so fun. You have greater control over decisions.
+But hey, your form library can also export both the wrapper component and the hook. This too is very common. That makes working on open source so fun.
 
-What is your word on the two photos at the top, BTW?
+Find this post useful? **✉️ Subscribe** below to get updates on my next writings.
 
 ## Resources
 The list here is not extensive. Some of the topics are more advanced, some are touching just the basics. **You are welcome to add to it.**
