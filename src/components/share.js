@@ -4,8 +4,7 @@ import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 export default function Share({ postDetails, location }) {
   const postURL = encodeURIComponent(location.href)
-  const postTitle = encodeURIComponent(`"${postDetails.title}" by @moubi`)
-  const hackerNewsId = postDetails.hackerNewsId
+  const { hackerNewsId, reddit } = postDetails
 
   return (
     <p
@@ -18,13 +17,13 @@ export default function Share({ postDetails, location }) {
       <OutboundLink
         target="_blank"
         rel="noreferrer"
-        href={`http://twitter.com/share?text=${postTitle}&url=${postURL}`}
+        href={`https://mobile.twitter.com/search?q=${postURL}`}
       >
         Twitter
       </OutboundLink>
-      {" • "}
       {hackerNewsId && (
         <>
+          {" • "}
           <OutboundLink
             target="_blank"
             rel="noreferrer"
@@ -32,16 +31,20 @@ export default function Share({ postDetails, location }) {
           >
             HackerNews
           </OutboundLink>
-          {" • "}
         </>
       )}
-      <OutboundLink
-        target="_blank"
-        rel="noreferrer"
-        href={`https://www.linkedin.com/sharing/share-offsite/?url=${postURL}`}
-      >
-        Linkedin
-      </OutboundLink>
+      {reddit && (
+        <>
+          {" • "}
+          <OutboundLink
+            target="_blank"
+            rel="noreferrer"
+            href={`https://reddit.com/${reddit}`}
+          >
+            HackerNews
+          </OutboundLink>
+        </>
+      )}
     </p>
   )
 }
