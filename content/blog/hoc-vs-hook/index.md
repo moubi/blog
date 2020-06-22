@@ -1,6 +1,6 @@
 ---
 title: "Render props vs hooks"
-date: "2020-06-22"
+date: "2020-06-23"
 description: "Who said render props are obsolete? The good old pattern is still valid for the common use case where hooks may not always be the right choice."
 hackerNewsId: ""
 reddit: ""
@@ -421,11 +421,11 @@ But hey, your form library can also export both the wrapper component and the ho
 
 Find this post useful? **✉️ Subscribe** below to get updates on my next writings.
 
-## Resources
+## <a class="header-link" href="#resources" id="resources">#</a> Resources
 The list here is not extensive. Some of the topics are more advanced, some are touching just the basics. **You are welcome to add to it.**
 
  - [Render Props](https://reactjs.org/docs/render-props.html) (React docs)
  - [Hooks at a Glance](https://reactjs.org/docs/hooks-overview.html) (React docs)
- - [Render Props are Not Dead](https://www.youtube.com/watch?v=pn0pIgdQvhU&list=PLCC436JpVnK0Q4WHoB85ZYBwcCyTaMgAl&index=6) (Erik Rasmussen)
  - [Use a Render Prop!](https://cdb.reacttraining.com/use-a-render-prop-50de598f11ce) (Michael Jackson)
  - [Awesome React Render Props](https://github.com/jaredpalmer/awesome-react-render-props) (Jared Palmer)
+ - [Render Props are Not Dead](https://www.youtube.com/watch?v=pn0pIgdQvhU&list=PLCC436JpVnK0Q4WHoB85ZYBwcCyTaMgAl&index=6) (Erik Rasmussen)

@@ -31,12 +31,12 @@ Wordpress2016.overrideThemeStyles = () => ({
     color: "var(--textNormal)",
   },
   "a.header-link": {
+    position: "absolute",
+    right: "100%",
+    paddingRight: "4px",
     display: "none",
-    float: "left",
   },
   "h2:hover a.header-link, h3:hover a.header-link, h4:hover a.header-link, h5:hover a.header-link, h6:hover a.header-link": {
-    marginLeft: "-25px",
-    paddingRight: "4px",
     display: "inline-block",
     boxShadow: "none",
   },
