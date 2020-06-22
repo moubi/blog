@@ -158,7 +158,7 @@ function Form() {
 }
 ```
 <p align="center">
-<sup>Check <a target="_blank" href="https://codesandbox.io/s/controlled-form-with-custom-hook-f810j?expanddevtools=1&fontsize=14&hidenavigation=1&module=%2Fsrc%2FApp.js&theme=dark">this codesandbox</a> for details.
+<sup>Check <a target="_blank" href="https://codesandbox.io/embed/controlled-form-with-custom-hook-f810j?expanddevtools=1&fontsize=14&hidenavigation=1&module=%2Fsrc%2FApp.js&theme=dark">this codesandbox</a> for details.
 
 Ideally adding more logic would result in just the `jsx` (the render) part growing, while `useForm` manages the state for you.
 
@@ -238,7 +238,7 @@ function Form() {
 }
 ```
 <p align="center">
-<sup>Curious about <code class="language-text">FormManager</code>'s implementation? Here is the <a target="_blank" href="https://codesandbox.io/s/controlled-form-with-render-props-xvil0?expanddevtools=1&fontsize=14&hidenavigation=1&module=%2Fsrc%2FApp.js&theme=dark">codesandbox</a>.<sup>
+<sup>Curious about <code class="language-text">FormManager</code>'s implementation? Here is the <a target="_blank" href="https://codesandbox.io/embed/controlled-form-with-render-props-xvil0?expanddevtools=1&fontsize=14&hidenavigation=1&module=%2Fsrc%2FApp.js&theme=dark">codesandbox</a>.<sup>
 </p>
 
 Abstracting the state away in a weird way, right? Yes, this is how it is.
@@ -407,7 +407,7 @@ If you put these two implementations side by side:
 
 <img alt="Comparison between render props and custom hook form" src="forms.gif">
 <p align="center">
-<sup>Feel free to play with <a target="_blank" href="https://codesandbox.io/s/forms-that-cause-re-render-issue-sd6tn?expanddevtools=1&fontsize=14&hidenavigation=1&theme=dark">that set up</a>.<sup>
+<sup>Feel free to play with <a target="_blank" href="https://codesandbox.io/embed/forms-that-cause-re-render-issue-sd6tn?expanddevtools=1&fontsize=14&hidenavigation=1&theme=dark">the set up</a>.<sup>
 </p>
 
 Voilà. You can now see the render outcome of each form. The one on the left (custom hook) is causing re-renders in all Page children, while the one on the right (render prop) doesn't.
