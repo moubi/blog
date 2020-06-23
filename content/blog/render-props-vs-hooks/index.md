@@ -2,8 +2,8 @@
 title: "Render props vs hooks"
 date: "2020-06-23"
 description: "Who said render props are obsolete? The good old pattern is still valid for the common use case where hooks may not always be the right choice."
-hackerNewsId: ""
-reddit: "r/reactjs/comments/heecm4/render_props_better_than_hooks/"
+hackerNewsId: "23614254"
+reddit: "r/reactjs/comments/heeoo6/render_props_better_than_hooks/"
 ---
 
 Can you guess which code snippet is more efficient and why?

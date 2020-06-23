@@ -3,7 +3,7 @@ import { rhythm } from "../utils/typography"
 import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 export default function Share({ postDetails, location }) {
-  const postURL = encodeURIComponent(location.href)
+  const postURL = encodeURIComponent(`https://webup.org${location.pathname}`)
   const { hackerNewsId, reddit } = postDetails
 
   return (
