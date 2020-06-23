@@ -41,7 +41,7 @@ export default function Share({ postDetails, location }) {
             rel="noreferrer"
             href={`https://reddit.com/${reddit}`}
           >
-            HackerNews
+            Reddit
           </OutboundLink>
         </>
       )}
