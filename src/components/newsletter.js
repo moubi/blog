@@ -22,8 +22,8 @@ export default function Newsletter() {
           Join the mailing list
         </h2>
         <p>
-          Get latest updates from my journey as javascript dev. React and
-          javascript tools, recipes, everyday challenges.
+          Get notified on the latest content. React and frontend solutions, how
+          to guides, open source.
         </p>
       </div>
       <form
