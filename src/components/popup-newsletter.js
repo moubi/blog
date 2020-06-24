@@ -19,7 +19,7 @@ export default function PopupNewsletter() {
         setTimeout(() => {
           setIsShown(true)
           window.localStorage.setItem("webup.org", "shown")
-        }, 1000)
+        }, 40000)
       }
     }
   }, [setIsShown])
