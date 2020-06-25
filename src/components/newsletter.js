@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import NewsletterConfirm from "./newsletter-confirm"
+import { trackCustomEvent } from "gatsby-plugin-google-analytics"
 import styles from "./newsletter.module.css"
 
 export default function Newsletter() {
@@ -24,6 +25,15 @@ export default function Newsletter() {
       }
     ).then(() => {
       setSuccess(true)
+
+      trackCustomEvent({
+        // string - required - The object that was interacted with (e.g.video)
+        category: "Subscribe form",
+        // string - required - Type of interaction (e.g. 'play')
+        action: "submit",
+        // string - optional - Useful for categorizing events (e.g. 'Spring Campaign')
+        label: email,
+      })
     })
   }
 
