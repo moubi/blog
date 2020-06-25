@@ -72,6 +72,18 @@ export default function Newsletter() {
             onSubmit={handleSubmit}
           >
             <input
+              aria-label="Mailchimp api field 1"
+              type="hidden"
+              name="u"
+              value="a8b6e7feef85415df77a72883"
+            />
+            <input
+              aria-label="Mailchimp api field 2"
+              type="hidden"
+              name="id"
+              value="a1d768b4bc"
+            />
+            <input
               aria-label="Name field"
               style={{
                 border: "var(--borderInput)",
