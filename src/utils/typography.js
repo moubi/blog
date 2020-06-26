@@ -9,11 +9,11 @@ Wordpress2016.overrideThemeStyles = () => ({
     color: "var(--textLink)",
   },
   // gatsby-remark-autolink-headers - don't underline when hidden
-  "a.anchor": {
+  "a.header-link": {
     boxShadow: "none",
   },
   // gatsby-remark-autolink-headers - use theme colours for the link icon
-  'a.anchor svg[aria-hidden="true"]': {
+  'a.header-link svg[aria-hidden="true"]': {
     stroke: "var(--textLink)",
   },
   hr: {
@@ -29,17 +29,6 @@ Wordpress2016.overrideThemeStyles = () => ({
   "h2, h3, h4, h5, h6, li": {
     position: "relative",
     color: "var(--textNormal)",
-  },
-  "a.header-link": {
-    position: "absolute",
-    right: "100%",
-    paddingRight: "4px",
-    visibility: "hidden",
-  },
-  "h2:hover a.header-link, h3:hover a.header-link, h4:hover a.header-link, h5:hover a.header-link, h6:hover a.header-link": {
-    display: "inline-block",
-    boxShadow: "none",
-    visibility: "visible",
   },
   h4: {
     textTransform: "none",
