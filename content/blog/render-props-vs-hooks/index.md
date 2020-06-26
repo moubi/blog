@@ -22,7 +22,7 @@ I started a [twitter discussion](https://twitter.com/moubi/status/12714293035745
 
 In reality, hooks and render props shake hands and play well together. But if you must decide between either of the two, though, let's put that decision on stress.
 
-Read on...
+Want to see the end benchmark? Skip to the [comparison](#comparison-in-action), otherwise read on...
 
 _If your are not familiar with hooks and the render props pattern - don't worry - a good starting point is [Render Props](https://reactjs.org/docs/render-props.html), [Use a Render Prop!](https://cdb.reacttraining.com/use-a-render-prop-50de598f11ce) and [Hooks at a Glance](https://reactjs.org/docs/hooks-overview.html). A list of resources is also available at the end._
 
