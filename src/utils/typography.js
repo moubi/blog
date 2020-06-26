@@ -34,11 +34,12 @@ Wordpress2016.overrideThemeStyles = () => ({
     position: "absolute",
     right: "100%",
     paddingRight: "4px",
-    display: "none",
+    visibility: "hidden",
   },
   "h2:hover a.header-link, h3:hover a.header-link, h4:hover a.header-link, h5:hover a.header-link, h6:hover a.header-link": {
     display: "inline-block",
     boxShadow: "none",
+    visibility: "visible",
   },
   h4: {
     textTransform: "none",
