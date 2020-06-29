@@ -12,6 +12,7 @@ import { rhythm, scale } from "../utils/typography"
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata.title
+  const siteUrl = data.site.siteMetadata.siteUrl
   const { previous, next } = pageContext
 
   return (
@@ -19,6 +20,18 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
+        meta={
+          post.frontmatter.featuredImage
+            ? [
+                {
+                  name: `twitter:image`,
+                  content:
+                    siteUrl +
+                    post.frontmatter.featuredImage.childImageSharp.fluid.src,
+                },
+              ]
+            : []
+        }
       />
       <article>
         <header>
@@ -95,6 +108,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        siteUrl
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
@@ -105,6 +119,13 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        featuredImage {
+          childImageSharp {
+            fluid(maxWidth: 800) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
         hackerNewsId
         reddit
       }

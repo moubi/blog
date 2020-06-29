@@ -7,7 +7,7 @@ module.exports = {
       summary: `My two cents on Javascript, React and Open source.`,
     },
     description: `A blog about React, front-end, open source. Personal perspective, thoughts and solutions of common challenges as a web developer`,
-    siteUrl: `https://webup.org/blog`,
+    siteUrl: `https://webup.org`,
     social: {
       twitter: `moubi`,
       github: `moubi`,
