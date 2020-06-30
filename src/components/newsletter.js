@@ -8,14 +8,13 @@ export default function Newsletter() {
 
   const handleSubmit = e => {
     e.preventDefault()
-    const name = encodeURIComponent(e.target.querySelector("#MERGE2").value)
     const email = encodeURIComponent(e.target.querySelector("#MERGE0").value)
 
     // Since the request is to another server (not set for CORS)
     // it is not possible to read the response, so I assume it was
     // a success
     fetch(
-      `https://webup.us18.list-manage.com/subscribe/post-json?u=a8b6e7feef85415df77a72883&id=a1d768b4bc&MERGE2=${name}&MERGE0=${email}&c=?`,
+      `https://webup.us18.list-manage.com/subscribe/post-json?u=a8b6e7feef85415df77a72883&id=a1d768b4bc&MERGE0=${email}&c=?`,
       {
         method: "GET",
         mode: "no-cors",
@@ -61,8 +60,8 @@ export default function Newsletter() {
               Join the mailing list
             </h2>
             <p>
-              Get notified on the latest content. React and frontend solutions,
-              how to guides, open source.
+              Get notified on the latest content. React and frontend solutions
+              to common problems, how to guides, open source.
             </p>
           </div>
           <form
@@ -82,17 +81,6 @@ export default function Newsletter() {
               type="hidden"
               name="id"
               value="a1d768b4bc"
-            />
-            <input
-              aria-label="Name field"
-              style={{
-                border: "var(--borderInput)",
-              }}
-              required
-              type="text"
-              placeholder="Name"
-              name="MERGE2"
-              id="MERGE2"
             />
             <input
               aria-label="Email field"

@@ -8,9 +8,17 @@ import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
 
 type Data = {
+  avatar: {
+    childImageSharp: {
+      fixed: {
+        src: string
+      }
+    }
+  }
   site: {
     siteMetadata: {
       title: string
+      siteUrl: string
     }
   }
   allMarkdownRemark: {
@@ -35,11 +43,25 @@ type Data = {
 
 const BlogIndex = ({ data, location }: PageProps<Data>) => {
   const siteTitle = data.site.siteMetadata.title
+  const siteUrl = data.site.siteMetadata.siteUrl
   const posts = data.allMarkdownRemark.edges
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" />
+      <SEO
+        title="All posts"
+        meta={[
+          {
+            name: `twitter:card`,
+            content: `summary`,
+          },
+          {
+            name: `twitter:image`,
+            content:
+            siteUrl + data.avatar.childImageSharp.fixed.src,
+          },
+        ]}
+      />
       <Bio />
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
@@ -80,9 +102,17 @@ export default BlogIndex
 
 export const pageQuery = graphql`
   query {
+    avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
+      childImageSharp {
+        fixed(width: 200, height: 200) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
     site {
       siteMetadata {
         title
+        siteUrl
       }
     }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {

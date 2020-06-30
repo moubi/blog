@@ -24,6 +24,10 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           post.frontmatter.featuredImage
             ? [
                 {
+                  name: `twitter:card`,
+                  content: `summary_large_image`,
+                },
+                {
                   name: `twitter:image`,
                   content:
                     siteUrl +
