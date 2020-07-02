@@ -9,7 +9,7 @@ const Confirm = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="Thank you for subscribing at webup.org/blog" />
+      <SEO title="Confirm your subscription at webup.org/blog" />
       <article>
         <h1
           style={{
@@ -19,12 +19,12 @@ const Confirm = ({ data, location }) => {
           Thank you for joining
         </h1>
         <p>
-          I hope this newsletter is useful and interesting.
+          We are almost there...
           <br />
           <span role="img" aria-label="envelope">
             📩
           </span>{" "}
-          &nbsp;Check your Inbox.
+          &nbsp;Check your Inbox for the confirmation link.
         </p>
       </article>
     </Layout>

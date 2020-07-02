@@ -30,12 +30,12 @@ const NewsletterConfirm = () => {
             padding: "0",
           }}
         >
-          I hope this newsletter is useful and interesting.
+          We are almost there...
           <br />
           <span role="img" aria-label="envelope">
             📩
           </span>{" "}
-          &nbsp;Check your Inbox.
+          &nbsp;Check your Inbox for the confirmation link.
         </p>
       </div>
     </section>

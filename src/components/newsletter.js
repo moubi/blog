@@ -61,7 +61,7 @@ export default function Newsletter() {
             </h2>
             <p>
               Get notified on the latest content. React and frontend solutions
-              to common problems, how to guides, open source.
+              to common problems, how-to guides, open source.
             </p>
           </div>
           <form
@@ -103,7 +103,7 @@ export default function Newsletter() {
               Subscribe
             </button>
             <p>
-              Practical information only.
+              Spam free.
               <br />
               Unnsubscribe at any time.
             </p>
