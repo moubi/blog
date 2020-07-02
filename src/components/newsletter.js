@@ -57,11 +57,11 @@ export default function Newsletter() {
                 fontFamily: "var(--secondaryFontFamily)",
               }}
             >
-              Join the mailing list
+              Join the friendly mail list
             </h2>
             <p>
-              Get notified on the latest content. React and frontend solutions
-              to common problems, how-to guides, open source.
+              Get biweekly updates to help you be a better javascript dev. The
+              same React and frontend tips that I use too.
             </p>
           </div>
           <form
