@@ -32,7 +32,7 @@ const Confirm = ({ data, location }) => {
         </p>
         <p>
           For summarized updates and discussions,{" "}
-          <a href="https://twitter.com/mobui" target="_blank" rel="noreferrer">
+          <a href="https://twitter.com/moubi" target="_blank" rel="noreferrer">
             follow me on Twitter
           </a>
           .
