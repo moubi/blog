@@ -19,9 +19,12 @@ const Confirm = ({ data, location }) => {
           Welcome to webup.org/blog
         </h1>
         <p>
-          I write about <strong>practical</strong> React and Javascript topics.
+          You are now part of a friendly list. Expect to get content updates 2-3
+          times per month.
         </p>
         <p>
+          I write about <strong>practical</strong> React and Javascript topics.
+          <br />
           That includes solutions on programming 
           <strong>challenges</strong> you have, <strong>how-to</strong> guides
           and maintaining open source.
