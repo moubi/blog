@@ -4,7 +4,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const Confirm = ({ data, location }) => {
+const Welcome = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
 
   return (
@@ -52,7 +52,7 @@ const Confirm = ({ data, location }) => {
   )
 }
 
-export default Confirm
+export default Welcome
 
 export const pageQuery = graphql`
   query {
