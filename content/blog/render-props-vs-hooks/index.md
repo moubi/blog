@@ -160,6 +160,7 @@ function Form() {
 ```
 <p align="center">
 <sup><a target="_blank" href="https://codesandbox.io/embed/controlled-form-with-custom-hook-f810j?expanddevtools=1&fontsize=14&hidenavigation=1&module=%2Fsrc%2FApp.js&theme=dark">This codesandbox</a> contains all the details.
+</p>
 
 Ideally adding more logic would result in just the `jsx` (the render) part growing, while `useForm` manages the state for you.
 
@@ -288,7 +289,7 @@ function MyComponent() {
 <sup>This snippet is actually a <a target="_blank" href="https://github.com/moubi/flow-task/blob/master/src/components/Board/Board.js#L129">real example</a>.<sup>
 </p>
 
-Nested wrapper components with render props. Oh, that doesn't look very promising. It may even trick some people to believe the pattern is obsolete in favour of _"do everything with hooks"_. Hooks [doesn't suffer the nesting issue](https://reactjs.org/docs/hooks-faq.html#do-hooks-replace-render-props-and-higher-order-components), that's true.
+Nested wrapper components with render props. Oh, that doesn't look very promising. It may even trick some people to believe the pattern is obsolete in favor of _"do everything with hooks"_. Hooks [doesn't suffer the nesting issue](https://reactjs.org/docs/hooks-faq.html#do-hooks-replace-render-props-and-higher-order-components), that's true.
 
 But if render props had no pros over hooks the article is leading to a dead end. It's not, I promise. There is something else, though, which is not about the syntax.
 
