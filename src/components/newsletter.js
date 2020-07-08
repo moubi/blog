@@ -60,7 +60,7 @@ export default function Newsletter() {
               Join the friendly mail list
             </h2>
             <p>
-              Get biweekly updates to help you be a better javascript dev. The
+              Get monthly updates to help you be a better javascript dev. The
               same React and frontend tips that I use too.
             </p>
           </div>
