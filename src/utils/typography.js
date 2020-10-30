@@ -47,7 +47,7 @@ Wordpress2016.overrideThemeStyles = () => ({
     fontWeight: 900,
   },
   sup: {
-    fontSize: typography.rhythm(0.45),
+    fontSize: typography.rhythm(0.5),
   },
 })
 delete Wordpress2016.googleFonts
