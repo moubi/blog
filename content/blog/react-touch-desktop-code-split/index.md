@@ -11,6 +11,8 @@ featuredImage: "react-desktop-mobile-code-split.png"
 This article is a mix of arguments, reality checks and a code solution at the end. Often the road leading to an actual implementation is long and bumpy - priorities, design, budget, colleagues with own views, talking in different languages. These obstacles are challenging and usually take more energy to deal with than just coding. For that reason they deserve a separate preface.
 
 Jump to the [code section](#conditionally-import-and-render-components), if this is what you are looking for, otherwise let's continue.
+
+_It would be helpful if you already know what code splitting is. If not yet familiar the ["Code Splitting"](https://reactjs.org/docs/code-splitting.html#code-splitting) writeup in the React docs is a good start._
 ___
 
 ## Reality check
@@ -31,19 +33,21 @@ All valid points so far and often you as a frontend professional won't get the c
 
 Native app or web app... Let's say a decision is taken and you are left with no choice - a web app must be delivered (for desktop and mobile users).
 
-## So, if you must do the split
+## What if you must do a split
 Splitting react apps touch/desktop wise can be tricky if you have to do it in the frontend.
 
 Things to be considered:
 
  - 1️⃣ figure out the threshold (**when** to serve each app)
  - 2️⃣ decide on the starting point (**where** in the code)
- - 3️⃣ import only app specific components (**how** it should work)
+ - 3️⃣ import only app specific components (**how** to implement it)
 
 **An answer to these three questions is important since maintainability, time, team motivation and other aspects very much depend on it.**
 
-## When user is considered mobile 1️⃣
-Usually you modify component's css to account for mobile devices. Perhaps this
+## When device is considered touch 1️⃣
+Usually you modify component's css to account for mobile devices.
+
+Perhaps the following
 
 ```css{8}
 .TopBar {
@@ -62,14 +66,14 @@ Usually you modify component's css to account for mobile devices. Perhaps this
 }
 ```
 
-works well most of the time. Same component with different appearance based on browser's width. There is no problem with such an approach and very often it will be enough. Now one may argue that `max-width: 768px` is sufficient to properly tell if user is on a mobile device. Probably not. May be something like that is more accurate:
+works well for you most of the time. Same component, but with different appearance based on browser's width. There is no problem with this approach and very often it is enough. Now one may argue that `max-width: 768px` is sufficient to properly tell if user is on a mobile device. Probably not. May be something like that is more accurate:
 
 ```css
 @media (pointer: coarse) and (hover: none) {
   ...
 }
 ```
-You can read more about [interaction media features and their potential](https://css-tricks.com/interaction-media-features-and-their-potential-for-incorrect-assumptions/) to determine device capabilities. It is something to consider when deciding on the criteria to serve the mobile version.
+You can read more about [interaction media features and their potential](https://css-tricks.com/interaction-media-features-and-their-potential-for-incorrect-assumptions/) to determine device capabilities. It is something to consider when deciding on the criteria for serving mobile app version.
 ___
 
 Challenges arise when your company starts getting more serious about mobile users ("mobile first"). This could happen due to a separate strong design/UX and product teams being formed. **In this reality your desktop and mobile web apps may end up drastically different. Business logic, pages, interactions and overall appearance are now unalike. Two independent versions of the same software.**
@@ -167,6 +171,73 @@ export default function Products() {
 </p>
 
 Enough on the possibilities for organizing the codebase. Once you are done with that, comes the question of how to glue things together.
+
+### What if there are only styling differences
+Should you create two copies of a component if it contains the same logic, but differs in styling? Looks like it should be shared and placed in the `/common` folder, but in the same time its css will need the good old media query approach.
+
+```css
+@media (max-width: 768px) { ... }
+
+/* OR */
+
+@media (pointer: coarse) and (hover: none) { ... }
+```
+
+That looks ok. Is it the best thing you can do, though? What if the logic that determines mobile capabilities changes? Should you change it in all places? It's probably something you don't want to do.
+
+So what is the right answer?
+
+Ideally the logic for detecting touch devices should be central for the app. Getting a desktop or mobile version of a component in that case should be as simple as passing a prop.
+
+Image this structure:
+
+```python{10,11}
+-- src
+   |-- components
+   |   |-- touch
+   |   |   |-- TopBar.js
+   |   |   |-- TopBar.css
+   |   |-- desktop
+   |   |   |-- TopBar.js
+   |   |   |-- TopBar.css
+   |   |-- common
+   |       |-- TopBarLinks.js
+   |       |-- TopBarLinks.css
+   |-- pages
+   |-- App.js
+```
+
+`<TopBarLinks />` is a shared component and may have some visual diffs. In its css this is addressed with a class.
+
+```css
+.TopBarLinks { ... }         /* Desktop */
+.TopBarLinks.touch { ... }   /* Mobile */
+```
+
+Then it is used both in `desktop/TopBar` and `touch/TopBar`:
+
+```jsx{5}
+// desktop/TopBar
+export const TopBar = () => (
+  <div className="TopBar">
+    <img alt="Logo" src="../../assets/logo.png" />
+    <TopBarLinks />
+  </div>
+);
+```
+and
+
+```jsx{5}
+// touch/TopBar
+export const TopBar = () => (
+  <div className="TopBar">
+    <img alt="Logo" src="../../assets/logo.png" />
+    <TopBarLinks touch />
+  </div>
+);
+```
+
+That's it. This is how you can render shared components with only visual diffs. **The css is cleaner and independent of the device detection logic.**
 
 ## Load components on demand 3️⃣
 No matter where the split resides in - application root or individual components, or perhaps both -  implementation is going to be the same. After all the pages from the earlier example are also components.
