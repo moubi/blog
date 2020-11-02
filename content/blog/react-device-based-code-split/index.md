@@ -170,7 +170,7 @@ export default function Products() {
 <sup><code class="language-text">pages/desktop/Products</code> imports only components from <code class="language-text">components/desktop</code>.</sup>
 </p>
 
-### Components with styling differences only
+### Components with styling differences
 Should you create two copies of a component if it contains the same logic, but differs in styling? Looks like it should be shared and placed in the `/common` folder, but in the same time its css will need the good old media query approach.
 
 ```css
