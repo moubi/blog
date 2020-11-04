@@ -1,7 +1,7 @@
 ---
 title: "Thoughts on device based code split in React"
 date: "2020-11-02"
-description: "Your company hired a new designer who got crazy with the company's web site. A mobile version is born and everybody expects you to code it. Here are some thoughts on the challenge."
+description: "Your company's UI designer got crazy with the new web site. An independent mobile version is born and everybody expects you to code it. Here are some thoughts on the challenge."
 featuredImage: "react-desktop-mobile-code-split.png"
 ---
 <p>
