@@ -37,6 +37,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             : []
         }
       />
+      <Newsletter />
       <article>
         <header>
           <h1
@@ -65,7 +66,6 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             marginBottom: rhythm(1),
           }}
         />
-        <Newsletter />
         <PopupNewsletter />
         <footer
           style={{

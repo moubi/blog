@@ -60,8 +60,8 @@ export default function Newsletter() {
               Join the mail list
             </h2>
             <p>
-              The easiest way to opt in for my monthly javascript and React
-              content. Words on a frontend dev's everyday challenges.
+              A monthly newsletter with handcrafted Javascript and React
+              articles. Words about everyday challenges in the frontend.
             </p>
           </div>
           <form
