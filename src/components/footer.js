@@ -29,6 +29,10 @@ const Footer = () => {
         <OutboundLink href={social.about} target="_blank" rel="noreferrer">
           about
         </OutboundLink>
+        {" • "}
+        <a title="webup.org/blog's rss" href="rss.xml">
+          rss
+        </a>
       </p>
     </footer>
   )
