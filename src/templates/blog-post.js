@@ -102,7 +102,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         </ul>
       </nav>
       <p style={{ "text-align": "right" }}>
-        <a title="webup.org/blog's rss" href="rss.xml">
+        <a title="webup.org/blog's rss" href={`${siteUrl}/blog/rss.xml`}>
           rss
         </a>
       </p>
