@@ -29,7 +29,7 @@ Chiefs may not admit it, but the reasons spin around:
 
 Working in the browser is fast and reliable. There are many static site generators ([Gatsby](https://www.gatsbyjs.org/), [Nextjs](https://nextjs.org/), [Docusaurus](https://v2.docusaurus.io/)) to support website creation with no backend knowledge required. [Jamstack](https://jamstack.org/what-is-jamstack/) principles and tools make production deployments of a product easier than ever. Such tools are capable of bringing "mobile first" concept to life, though it still remains wishful thinking.
 
-In the same time publishing a standalone mobile app to some app stores may turn into a nightmare. Read about [the Hey saga](https://hey.com/apple/) fx. In contrast, javascript devs can quickly mockup a mobile version with the help of Chrome tools, so why hiring an iOS/Android guy?
+In the same time publishing a standalone mobile app to some app stores may turn into a nightmare. Read about [the Hey saga](https://hey.com/apple/) fx. In contrast, javascript devs can quickly mockup a mobile version with the help of Chrome tools, so why hire an iOS/Android guy?
 
 All valid points and to add more, often you as a frontend professional won't get the chance to influence the final decision (especially in big companies). It is to be taken by product, marketing or finance teams.
 
