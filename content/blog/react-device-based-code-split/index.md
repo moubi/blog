@@ -40,13 +40,13 @@ Splitting react apps touch/desktop wise can be tricky if you have to do it in th
 
 Things to be considered:
 
- - 1️⃣ consider touch and desktop devices (**when** to serve each app)
+ - 1️⃣ account for touch and desktop devices (**when** to serve each app)
  - 2️⃣ decide on the split starting point (**where** in the code)
  - 3️⃣ import only app specific components (**how** to implement it)
 
 **An answer to these three questions is important since maintainability, time, team motivation and other aspects very much depend on it.**
 
-## When device is considered touch 1️⃣
+## When a device is considered touch 1️⃣
 Usually you modify component's css to account for mobile devices.
 
 Perhaps the following
