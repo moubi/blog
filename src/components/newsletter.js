@@ -57,11 +57,11 @@ export default function Newsletter() {
                 fontFamily: "var(--secondaryFontFamily)",
               }}
             >
-              Join the mail list
+              Join the Mail List
             </h2>
             <p>
-              A monthly newsletter with handcrafted Javascript and React
-              articles. Words about everyday challenges in the frontend.
+              A monthly update with my next handcrafted Javascript/React
+              writing. Thoughts on everyday challenges in the frontend.
             </p>
           </div>
           <form

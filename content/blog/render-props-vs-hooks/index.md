@@ -1,5 +1,5 @@
 ---
-title: "Render props vs hooks"
+title: "Render Props vs Hooks"
 date: "2020-06-23"
 description: "Who said render props are obsolete? The good old pattern is still valid for the common use case where hooks may not always be the right choice."
 featuredImage: "twitter-card.png"
