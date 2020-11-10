@@ -48,9 +48,6 @@ export default function Newsletter() {
       ) : (
         <>
           <div>
-            <span role="img" aria-label="Envelope icon" className={styles.logo}>
-              ✉️
-            </span>
             <h2
               className={styles.heading}
               style={{
@@ -61,7 +58,7 @@ export default function Newsletter() {
             </h2>
             <p>
               A monthly update with my next handcrafted Javascript/React
-              writing. Thoughts on everyday challenges in the frontend.
+              write-up. Reflections on the everyday web dev challenges.
             </p>
           </div>
           <form
@@ -102,11 +99,6 @@ export default function Newsletter() {
             >
               Subscribe
             </button>
-            <p>
-              Spam free.
-              <br />
-              Unnsubscribe at any time.
-            </p>
           </form>
         </>
       )}

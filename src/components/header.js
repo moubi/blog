@@ -11,7 +11,7 @@ const Header = ({ location, title }) => {
     header = (
       <h1
         style={{
-          ...scale(1),
+          ...scale(0.9),
           marginTop: 0,
           marginBottom: 0,
         }}

@@ -44,6 +44,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             style={{
               marginTop: rhythm(1),
               marginBottom: 0,
+              lineHeight: 1.2,
             }}
           >
             {post.frontmatter.title}

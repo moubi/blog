@@ -27,7 +27,7 @@ export default function PopupNewsletter() {
             // string - required - Type of interaction (e.g. 'play')
             action: "2:10 min passed",
           })
-        }, 130000)
+        }, 240000)
       }
     }
   }, [setIsShown])
