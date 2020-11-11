@@ -25,12 +25,11 @@ I want a reference place with solutions/guides. I want examples, easy to digest 
 ## Inspiration
 It is also dedicated to React, right? So, it's built based on [Gatsby](https://www.gatsbyjs.org/)'s default [starter-blog](https://github.com/gatsbyjs/gatsby-starter-blog) (with some edits) and inspired by [Dan Abramov](https://twitter.com/dan_abramov)'s [overreacted.io](https://overreacted.io).
 
-## Recourses
-If you want to get to know me - a good starting point in [my webpage](https://webup.org), [twitter](https://twitter.com/moubi), [github](https://github.com/moubi) or [linkedin](https://www.linkedin.com/in/moubi/).
+## Resources
+📩 [Subscribe](https://webup.org/blog/subscribe/) for my next handcrafted Javascript/React write-up. Issued monthly. <br />
+You can also [follow me on Twitter](https://twitter.com/moubi) for more frequent updates.
 
-**If you want to get regular updates, please subscribe via the form below.**
-
-_I don't spam with personal information or political views._
+_I won't spam or share political views with you._
 
 <div align="center">
  <h2>👋</h2>

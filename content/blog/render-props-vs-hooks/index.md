@@ -418,8 +418,11 @@ Voilà. You can now see the render outcome of each form. The one on the left (cu
 It is very common that many render prop implementations are using hooks internally so saying _"it's hooks or nothing"_ would be extreme. Hooks support the pattern pretty well and gain the extra flexibility they lack in some situations. This is to consider when deciding between one OR the other approach.
 
 But hey, your form library can also export both the wrapper component and the hook. This too is very common. That makes working on open source so fun.
+___
 
-Find this post useful? Get notified by **✉️ subscribing** via the form below.
+📩 [Subscribe](https://webup.org/blog/subscribe/) for my next handcrafted Javascript/React write-up. Issued monthly. <br />
+You can also [follow me on Twitter](https://twitter.com/moubi) for more frequent updates.
+___
 
 ## Resources
 The list here is not extensive. Some of the topics are more advanced, some are touching just the basics. **You are welcome to add to it.**
