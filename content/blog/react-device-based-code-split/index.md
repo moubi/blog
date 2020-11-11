@@ -363,7 +363,11 @@ Again code splitting is supported by default with [Create React App](https://cre
 ## Final Words
 Check [the full code implementation in Codesandbox](https://codesandbox.io/s/desktopmobile-code-split-sjbt0?file=/src/App.js) for details on device based code splitting.
 
-I would like to wrap up by sharing my own motivation for having app structure like the one described. It may not be your case, but my observations show a common mindset especially in big corps where a clear separation between product, backend and frontend is in place. In that reality it's much easier (and often the only thing you can do) to overcome process issues with a tech solution, instead of trying to change people. Here is an example: you know that backend will deliver the API in a week, but you also know that you can deliver the UI today. Waiting one week for the backend? The slow backend delivery might be due to organizational issues. The tech solution in that case is to mock the payload and deliver to QA and Product teams early.
+I would like to wrap up by sharing my own motivation for having app structure like the one described. It may not be your case, but my observations show a common mindset especially in big corps where a clear separation between product, backend and frontend is in place.
+
+In that reality it's much easier (and often the only thing you can do) to overcome process issues with a tech solution, instead of trying to change people.
+
+Here is an example: you know that backend will deliver the API in a week, but you also know that you can deliver the UI today. Waiting one week for the backend? The slow backend delivery might be due to organizational issues. The tech solution in that case is to mock the payload and deliver to QA and Product teams early.
 
 The same motive plays role when deciding to avoid backend when code splitting the app.
 
