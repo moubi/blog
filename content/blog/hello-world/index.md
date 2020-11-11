@@ -10,7 +10,7 @@ I need a space to store observations and knowledge that could refer myself and o
 ## Why
 Because if you don't write it, it will be lost. Talking with paper helps better understand topics you believe are clear, but you don't actually know very well. And at the end it is a good way to contribute value.
 
-## Another React/Javascript blog?
+## Another React/Javascript Blog?
 Using React and Javascript on a daily basis is with no doubt enjoyable process that I never regret about. But like any other programming language it often challenges you with the following:
  - **complex**, but rarely complicated problems
  - **repetitive** tasks and activities

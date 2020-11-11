@@ -40,7 +40,7 @@ I remember the voice in my head when hit the play button on that React Europe vi
 
 If so, then what follows may be a surprise.
 
-## The problem
+## The Problem
 Hooks and render props can solve the same problem. **It is conceptually about moving state away from your components, so that it is reusable.** The question is which one does better job? When? Does it matter bother with wrapper components and render props since we already have the hooks api?
 
 To answer, let's work with the common form example below throughout this journey. It's trivial and you have probably seen it many times:
@@ -82,7 +82,7 @@ class Form extends Component {
 
 The snippet may force you think: _"This is a recipe for disaster"_. Right, and state is the primary suspect. Adding to that, usually you have more fields involved in the form and need to handle validation, submission, API calls, error messages too. Of course, as a result **your component will grow and you may need to relief the state logic by abstracting it somehow.**
 
-## Handling state abstraction with hooks
+## Handling State Abstraction with Hooks
 Look at this simplified code:
 
 ```jsx
@@ -128,7 +128,7 @@ const [address, setAddress] = useState("");  // highlight-line
 
 Using hooks and functional components is already a win. OK, but you bump into another trouble - component state is growing together with the form. From that point there are two options. Create separate form component or a custom hook to hold the state heavy lifting.
 
-### Form custom hook
+### Form Custom Hook
 I assume you know how to build one. There are many examples out there, so let's not focus on the `useForm` implementation below. What is interesting is how it improves our component and how it gets consumed. Remember we are slowly getting to the pain point - would custom hook be the best approach here.
 
 Lastly, please excuse once again the simplicity as the idea is just to illustrate the pattern.
@@ -209,7 +209,7 @@ The state no longer resides in `<Form />`, but the component will continue to re
 
 Ok, but how about render props?
 
-## Handling state via render prop
+## Handling State via Render Prop
 Unloading the Form component state-wise using the render props approach requires you to create a wrapper component. So, no hooks on the surface, but a regular component. In this example it is `children` that serves as a render prop, but you may use `render` (or something else) instead.
 
 ```jsx{5,6}
@@ -295,7 +295,7 @@ But if render props had no pros over hooks the article is leading to a dead end.
 
 Keep on...
 
-## Reality check
+## Reality Check
 Let's recap. Remember this part from the beginning?
 
 ```jsx{2}
@@ -349,7 +349,7 @@ There are three general restrictions with hooks:
 
 Skipping the first two... If you have class components and lower version of react you can't use hooks obviously. **The third one, however, is the cornerstone when deciding between hooks and render props.**
 
-### You may fall into re-render issues
+### You May Fall into Re-render Issues
 Given the last example, every time you type in the form fields `setValue` will be called causing the whole `<Page />` component to re-render. And because you are updating the state, this is expected. But not desirable. **Suddenly filling a form may become very expensive operation.**
 
 React is clever enough to protect you from unnecessary renders, but it won't go against its principles. Every  component has its own catch-ups and you need to work around these, so it's safe against renders. Unfortunately, it may not be the case with `<Header />`, `<Navigation />` and `<Footer />` because, let's imagine, you don't have time to refactor them. And with `<SomeOtherThirdPartyComponent />` you may even not be able to do so.
@@ -362,7 +362,7 @@ Hooks are not remedy for all problems and they are not intended to serve that pu
 
 Use the hooks, but add some sugar.
 
-### Re-render only what is relevant
+### Re-render only What Is Relevant
 Render props doesn't suffer the same re-render issue hooks do. Here is why.
 
 ```jsx{7,8}
@@ -402,7 +402,7 @@ Of course you can always break the useful pattern. Imagine updating some `<Page 
 
 Now if your form library exports component with a render prop instead, its users get that extra flexibility. They are no longer forced to create additional components.
 
-## Comparison in action
+## Comparison in Action
 Putting these two implementations side by side:
 
 <img alt="Comparison between render props and custom hook form" src="forms.gif">
@@ -412,7 +412,7 @@ Putting these two implementations side by side:
 
 Voilà. You can now see the render outcome of each form. The one on the left (custom hook) is causing re-renders in all Page children, while the one on the right (render prop) doesn't.
 
-## Final words
+## Final Words
 **Render props are very useful if you want to isolate part of the jsx and inject some state without introducing side effects to your components.**
 
 It is very common that many render prop implementations are using hooks internally so saying _"it's hooks or nothing"_ would be extreme. Hooks support the pattern pretty well and gain the extra flexibility they lack in some situations. This is to consider when deciding between one OR the other approach.

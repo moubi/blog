@@ -17,7 +17,7 @@ Jump to the [code section](#conditionally-import-and-render-components), if this
 _It would be helpful if you already know what code splitting is. If not yet, the ["Code Splitting"](https://reactjs.org/docs/code-splitting.html#code-splitting) writeup in the React docs is a good start._
 ___
 
-## Reality check
+## Reality Check
 **Many companies today prefer to build their web apps/sites targeting both touch and desktop devices, but would rather not invest in a separate mobile app.**
 
 Chiefs may not admit it, but the reasons spin around:
@@ -35,7 +35,7 @@ All valid points and to add more, often you as a frontend professional won't get
 
 Native app or web app... Let's assume a decision is taken and you are left with no choice - **a web app must be delivered (for desktop and mobile users)**.
 
-## If you must code split
+## If You Must Code Split
 Splitting react apps touch/desktop wise can be tricky if you have to do it in the frontend.
 
 Things to be considered:
@@ -46,7 +46,7 @@ Things to be considered:
 
 **An answer to these three questions is important since maintainability, time, team motivation and other aspects very much depend on it.**
 
-## When a device is considered touch 1️⃣
+## When a Device Is Considered Touch 1️⃣
 Usually you modify component's css to account for mobile devices.
 
 Perhaps the following
@@ -86,10 +86,10 @@ For sure you won't be able to reuse every single component in both apps (touch a
 
 **This is where a proper split in the frontend must be done and it can't reside in your `.css` files alone.**
 
-## Where to split the app 2️⃣
+## Where to Split the App 2️⃣
 It really depends. You have a few options considering requirements and design. **One** is to split the app in its root. May be you have `PageRouter.js` or just `App.js` where page components are rendered based on URL path. **Second option** - split individual components. It is a good choice if pages for mobile and desktop are the same (or very similar), but some child components differ. You can also pick the **third option** of using media queries in the css.
 
-### Split in the app's root
+### Split in the App's Root
 **This approach makes sense if your mobile and desktop apps are very different - separate pages, behavior, data and business logic in components.**
 
 Let's say there is a product details page (`<ProductDetails />`) on touch which doesn't exist in your desktop site. It displays detailed product information that otherwise would be part of `<Products />` when viewing on PC. On a phone, though, it might be too "noisy" to present so much data in a single page.
@@ -132,7 +132,7 @@ Few more buttons for mobile or a dropdown on desktop? You can feel more comforta
 
 Implementing a products page means you have to do it for each app (two components). With the folder split above, it's easy to divide the work within the team without stepping on each other's toes.
 
-### Split on component level
+### Split on Component Level
 Root level code split is often supplemented by splitting the `/components` folder in a similar way. On the other hand, sometimes your desktop and mobile apps won't be very different. Only a few components deep in the tree may have unalike data model or behavior. **If you find yourself in any of these cases it might be useful to do a split per component**.
 
 ```python{2,3,6,9}
@@ -170,7 +170,7 @@ export default function Products() {
 <sup><code class="language-text">pages/desktop/Products</code> imports only components from <code class="language-text">components/desktop</code>.</sup>
 </p>
 
-### Components with styling differences
+### Components with Styling Differences
 Should you create two copies of a component if it contains the same logic, but differs in styling? Looks like it should be shared and placed in the `/common` folder, but in the same time its css will need the good old media query approach.
 
 ```css
@@ -239,14 +239,14 @@ That's it. This is how you can render shared components with visual diffs. **As 
 
 Enough said on the possibilities for organizing the codebase. Now, how to glue things together.
 
-## Load components on demand 3️⃣
+## Load Components on Demand 3️⃣
 No matter where the split resides in - application root or individual components, or perhaps both -  its implementation is going to be the same. Ultimately the pages from all earlier examples are also components.
 
 The task is to load only desktop **OR** touch related code in the browser. Loading the whole bundle (all components), but using (rendering) only device specific slice may work, but it's not optimal. A proper implementation requires you to use [dynamic import()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import#Dynamic_Imports).
 
 React docs tell you that [Suspense](https://reactjs.org/docs/react-api.html#reactsuspense) relies on that principle underneath and will probably do the job. You could also base your solution on [loadable-components](https://github.com/gregberge/loadable-components) library. For the sake of simplicity and to cover the specific use case of touch/desktop based split, let's further focus on a plain solution.
 
-### Conditionally import and render components
+### Conditionally Import and Render Components
 I personally imagine the following in the application root (`App.js`):
 
 ```jsx{8,9,11}
@@ -284,7 +284,7 @@ The third prop is `children` function that does the actual rendering. An obvious
 }
 ```
 
-### Implementation details
+### Implementation Details
 What will `Import` do internally is to: evaluate which component to load and pass it down as an argument to the render prop function.
 
 Basic implementation may look like:
@@ -327,7 +327,7 @@ export function Import({ touch, desktop, children }) {
 
 Using `import()` requires some prerequisites to allow for proper parsing and dividing the final bundle in parts. You may need to additionally set these up.
 
-### Webpack config
+### Webpack Config
 For the split to work there are some [adjustments in the webpack config](https://webpack.js.org/guides/code-splitting/) file to be made. An example config by [Dan Abramov](https://overreacted.io) can be [found on github](https://gist.github.com/gaearon/ca6e803f5c604d37468b0091d9959269). If you are using **Create React App** that is done by default.
 
 ```javascript
@@ -344,10 +344,10 @@ module.exports = {
 };
 ```
 
-### Babel plugin
+### Babel Plugin
 If you are using Babel the [@babel/plugin-syntax-dynamic-import](https://classic.yarnpkg.com/en/package/@babel/plugin-syntax-dynamic-import) plugin is required in order to properly parse dynamic imports.
 
-### Eslint config
+### Eslint Config
 [eslint-plugin-import](https://www.npmjs.com/package/eslint-plugin-import) is also required to support export/import syntax. Don't forget to update your eslint config file:
 
 ```javascript
@@ -360,7 +360,7 @@ If you are using Babel the [@babel/plugin-syntax-dynamic-import](https://classic
 
 Again code splitting is supported by default with [Create React App](https://create-react-app.dev/docs/code-splitting) and you can skip the config steps in that case.
 
-## Final words
+## Final Words
 Check [the full code implementation in Codesandbox](https://codesandbox.io/s/desktopmobile-code-split-sjbt0?file=/src/App.js) for details on device based code splitting.
 
 I would like to wrap up by sharing my own motivation for having app structure like the one described. It may not be your case, but my observations show a common mindset especially in big corps where a clear separation between product, backend and frontend is in place. In that reality it's much easier (and often the only thing you can do) to overcome process issues with a tech solution, instead of trying to change people. Here is an example: you know that backend will deliver the API in a week, but you also know that you can deliver the UI today. Waiting one week for the backend? The slow backend delivery might be due to organizational issues. The tech solution in that case is to mock the payload and deliver to QA and Product teams early.
