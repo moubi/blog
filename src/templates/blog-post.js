@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { Link, graphql } from "gatsby"
 
 import Bio from "../components/bio"
@@ -9,13 +9,23 @@ import NewsletterLink from "../components/newsletter-link.touch"
 import Share from "../components/share"
 import { rhythm, scale } from "../utils/typography"
 
-const isMobileView = window.matchMedia("screen and (max-width: 600px)").matches
-
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata.title
   const siteUrl = data.site.siteMetadata.siteUrl
   const { previous, next } = pageContext
+  const [isMobileView, setIsMobileView] = useState(false)
+
+  useEffect(() => {
+    if (
+      isMobileView !==
+      window.matchMedia("screen and (max-width: 600px)").matches
+    ) {
+      setIsMobileView(
+        window.matchMedia("screen and (max-width: 600px)").matches
+      )
+    }
+  }, [isMobileView])
 
   return (
     <Layout location={location} title={siteTitle}>

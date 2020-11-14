@@ -1,5 +1,5 @@
 // Gatsby supports TypeScript natively!
-import React from "react"
+import React, {useEffect, useState} from "react"
 import { PageProps, Link, graphql } from "gatsby"
 
 import Bio from "../components/bio"
@@ -8,8 +8,6 @@ import SEO from "../components/seo"
 import Newsletter from "../components/newsletter"
 import NewsletterLink from "../components/newsletter-link.touch"
 import { rhythm, scale } from "../utils/typography"
-
-const isMobileView = window.matchMedia("screen and (max-width: 600px)").matches
 
 type Data = {
   avatar: {
@@ -49,6 +47,18 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
   const siteTitle = data.site.siteMetadata.title
   const siteUrl = data.site.siteMetadata.siteUrl
   const posts = data.allMarkdownRemark.edges
+  const [isMobileView, setIsMobileView] = useState(false)
+
+  useEffect(() => {
+    if (
+      isMobileView !==
+      window.matchMedia("screen and (max-width: 600px)").matches
+    ) {
+      setIsMobileView(
+        window.matchMedia("screen and (max-width: 600px)").matches
+      )
+    }
+  }, [isMobileView])
 
   return (
     <Layout location={location} title={siteTitle}>

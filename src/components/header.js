@@ -1,13 +1,23 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 import { rhythm, scale } from "../utils/typography"
 import { ThemeToggler } from "gatsby-plugin-dark-mode"
 
-const isMobileView = window.matchMedia("screen and (max-width: 600px)").matches
-
 const Header = ({ location, title }) => {
   const rootPath = `${__PATH_PREFIX__}/`
   let header
+  const [isMobileView, setIsMobileView] = useState(false)
+
+  useEffect(() => {
+    if (
+      isMobileView !==
+      window.matchMedia("screen and (max-width: 600px)").matches
+    ) {
+      setIsMobileView(
+        window.matchMedia("screen and (max-width: 600px)").matches
+      )
+    }
+  }, [isMobileView])
 
   if (location.pathname === rootPath) {
     header = (
