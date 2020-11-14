@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import { Link, graphql } from "gatsby"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Newsletter from "../components/newsletter"
-import NewsletterLink from "../components/newsletter-link.touch"
+import NewsletterLink from "../components/newsletter-link"
 import Share from "../components/share"
 import { rhythm, scale } from "../utils/typography"
 
@@ -14,18 +14,6 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const siteTitle = data.site.siteMetadata.title
   const siteUrl = data.site.siteMetadata.siteUrl
   const { previous, next } = pageContext
-  const [isMobileView, setIsMobileView] = useState(false)
-
-  useEffect(() => {
-    if (
-      isMobileView !==
-      window.matchMedia("screen and (max-width: 600px)").matches
-    ) {
-      setIsMobileView(
-        window.matchMedia("screen and (max-width: 600px)").matches
-      )
-    }
-  }, [isMobileView])
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -49,7 +37,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             : []
         }
       />
-      {isMobileView ? <NewsletterLink /> : <Newsletter />}
+      <NewsletterLink isInBlogPost />
       <article>
         <header>
           <h1
@@ -79,6 +67,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             marginBottom: rhythm(1),
           }}
         />
+        <Newsletter />
         <footer
           style={{
             marginTop: rhythm(2),
