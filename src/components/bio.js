@@ -2,8 +2,9 @@ import React from "react"
 import { useSiteMetadata } from "../hooks/useSiteMetadata"
 import Image from "gatsby-image"
 import { OutboundLink } from "gatsby-plugin-google-analytics"
-
 import { rhythm } from "../utils/typography"
+
+const isMobileView = window.matchMedia("screen and (max-width: 600px)").matches
 
 const Bio = () => {
   const data = useSiteMetadata()
@@ -13,7 +14,7 @@ const Bio = () => {
     <div
       style={{
         display: `flex`,
-        marginBottom: rhythm(1),
+        marginBottom: isMobileView ? 0 : rhythm(1),
       }}
     >
       <Image

@@ -6,7 +6,10 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Newsletter from "../components/newsletter"
+import NewsletterLink from "../components/newsletter-link.touch"
 import { rhythm, scale } from "../utils/typography"
+
+const isMobileView = window.matchMedia("screen and (max-width: 600px)").matches
 
 type Data = {
   avatar: {
@@ -64,7 +67,7 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
         ]}
       />
       <Bio />
-      <Newsletter />
+      {isMobileView ? <NewsletterLink /> : <Newsletter />}
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
         return (

@@ -5,8 +5,11 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Newsletter from "../components/newsletter"
+import NewsletterLink from "../components/newsletter-link.touch"
 import Share from "../components/share"
 import { rhythm, scale } from "../utils/typography"
+
+const isMobileView = window.matchMedia("screen and (max-width: 600px)").matches
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
@@ -36,7 +39,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             : []
         }
       />
-      <Newsletter />
+      {isMobileView ? <NewsletterLink /> : <Newsletter />}
       <article>
         <header>
           <h1
@@ -100,7 +103,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           </li>
         </ul>
       </nav>
-      <p style={{ "text-align": "right" }}>
+      <p style={{ textAlign: "right" }}>
         <a title="webup.org/blog's rss" href={`${siteUrl}/blog/rss.xml`}>
           rss
         </a>

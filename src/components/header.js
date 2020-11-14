@@ -3,6 +3,8 @@ import { Link } from "gatsby"
 import { rhythm, scale } from "../utils/typography"
 import { ThemeToggler } from "gatsby-plugin-dark-mode"
 
+const isMobileView = window.matchMedia("screen and (max-width: 600px)").matches
+
 const Header = ({ location, title }) => {
   const rootPath = `${__PATH_PREFIX__}/`
   let header
@@ -11,7 +13,12 @@ const Header = ({ location, title }) => {
     header = (
       <h1
         style={{
-          ...scale(0.9),
+          ...(isMobileView
+            ? {
+                fontSize: rhythm(1),
+                lineHeight: rhythm(2.3),
+              }
+            : scale(0.9)),
           marginTop: 0,
           marginBottom: 0,
         }}
@@ -32,7 +39,7 @@ const Header = ({ location, title }) => {
       <h3
         style={{
           fontFamily: "var(--secondaryFontFamily)",
-          lineHeight: rhythm(2),
+          lineHeight: isMobileView ? rhythm(2) : rhythm(1.5),
           marginTop: 0,
           marginBottom: 0,
         }}
@@ -53,7 +60,7 @@ const Header = ({ location, title }) => {
   return (
     <header
       style={{
-        marginBottom: rhythm(1.6),
+        marginBottom: isMobileView ? rhythm(0.5) : rhythm(1.6),
         display: `flex`,
         justifyContent: `space-between`,
         alignItems: `center`,
