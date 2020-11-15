@@ -10,7 +10,7 @@ featuredImage: "react-desktop-mobile-code-split.png"
 
 This article is a mix of arguments, reality checks and a code solution at the end. **Its focus: device (touch/desktop) driven code split in React with no backend.**
 
-Often the road leading to an actual implementation is long and bumpy - priorities, design, budget, colleagues with own views, talking in different languages. These obstacles are challenging and usually take more energy to deal with than just coding. For that reason they deserve a separate preface here.
+Often the road leading to an actual implementation is long and bumpy - priorities, design, budget, colleagues with their own views, talking in different languages. These obstacles are challenging and usually take more energy to deal with than just coding. For that reason they deserve a separate preface here.
 
 Jump to the [code section](#conditionally-import-and-render-components), if this is what you are looking for, otherwise let's continue.
 
@@ -22,14 +22,14 @@ ___
 
 Chiefs may not admit it, but the reasons spin around:
  1. Building for the browser is fast and cheap.
- 2. No need to involve backend.
+ 2. No need to involve the backend.
  3. Prizing "mobile first", but don't really align with that principle.
  4. Technical impediments to deliver a mobile app to the store.
  5. No budget.
 
-Working in the browser is fast and reliable. There are many static site generators ([Gatsby](https://www.gatsbyjs.org/), [Nextjs](https://nextjs.org/), [Docusaurus](https://v2.docusaurus.io/)) to support website creation with no backend knowledge required. [Jamstack](https://jamstack.org/what-is-jamstack/) principles and tools make production deployments of a product easier than ever. Such tools are capable of bringing "mobile first" concept to life, though it still remains wishful thinking.
+Working in the browser is fast and reliable. There are many static site generators ([Gatsby](https://www.gatsbyjs.org/), [Nextjs](https://nextjs.org/), [Docusaurus](https://v2.docusaurus.io/)) to support website creation with no backend knowledge required. [Jamstack](https://jamstack.org/what-is-jamstack/) principles and tools make production deployments of a product easier than ever. Such tools are capable of bringing the "mobile first" concept to life, though it still remains wishful thinking.
 
-In the same time publishing a standalone mobile app to some app stores may turn into a nightmare. Read about [the Hey saga](https://hey.com/apple/) fx. In contrast, javascript devs can quickly mockup a mobile version with the help of Chrome tools, so why hire an iOS/Android guy?
+At the same time publishing a standalone mobile app to some app stores may turn into a nightmare. Read about [the Hey saga](https://hey.com/apple/) fx. In contrast, javascript devs can quickly mockup a mobile version with the help of Chrome tools, so why hire an iOS/Android guy?
 
 All valid points and to add more, often you as a frontend professional won't get the chance to influence the final decision (especially in big companies). It is to be taken by product, marketing or finance teams.
 
@@ -68,7 +68,7 @@ Perhaps the following
 }
 ```
 
-works well for you most of the time. Same component, but with different appearance based on browser's width. There is no problem with this approach and very often it is enough. Now one may argue that `max-width: 768px` is sufficient to properly tell if user is on a mobile device. Probably not. May be something like that is more accurate:
+works well for you most of the time. Same component, but with different appearance based on browser's width. There is no problem with this approach and very often it is enough. Now one may argue that `max-width: 768px` is sufficient to properly tell if a user is on a mobile device. Probably not. May be something like that is more accurate:
 
 ```css
 @media (pointer: coarse) and (hover: none) {
@@ -80,14 +80,14 @@ ___
 
 Challenges arise when your company starts getting more serious about mobile users ("mobile first"). This could happen due to a separate strong design/UX and product teams being formed. **In this reality your desktop and mobile websites/apps may end up drastically different. Business logic, pages, interactions and overall appearance are now unalike. Two independent versions of the same software.**
 
-How that translates in React's language?
+How does that translate in the React's language?
 
 For sure you won't be able to reuse every single component in both apps (touch and desktop). Same components/pages will require different data set and behave non-identically (javascript logic). Others will be completely unique per app. **In that case css adjustments as the one above may no longer be sufficient.** Interactions and data (javascript) need to be considered along with styling (css).
 
 **This is where a proper split in the frontend must be done and it can't reside in your `.css` files alone.**
 
 ## Where to Split the App 2️⃣
-It really depends. You have a few options considering requirements and design. **One** is to split the app in its root. May be you have `PageRouter.js` or just `App.js` where page components are rendered based on URL path. **Second option** - split individual components. It is a good choice if pages for mobile and desktop are the same (or very similar), but some child components differ. You can also pick the **third option** of using media queries in the css.
+It really depends. You have a few options considering requirements and design. **One** is to split the app in its root. Maybe you have `PageRouter.js` or just `App.js` where page components are rendered based on the URL path. **Second option** - split individual components. It is a good choice if pages for mobile and desktop are the same (or very similar), but some child components differ. You can also pick the **third option** of using media queries in the css.
 
 ### Split in the App's Root
 **This approach makes sense if your mobile and desktop apps are very different - separate pages, behavior, data and business logic in components.**
@@ -133,7 +133,7 @@ Few more buttons for mobile or a dropdown on desktop? You can feel more comforta
 Implementing a products page means you have to do it for each app (two components). With the folder split above, it's easy to divide the work within the team without stepping on each other's toes.
 
 ### Split on Component Level
-Root level code split is often supplemented by splitting the `/components` folder in a similar way. On the other hand, sometimes your desktop and mobile apps won't be very different. Only a few components deep in the tree may have unalike data model or behavior. **If you find yourself in any of these cases it might be useful to do a split per component**.
+Root level code split is often supplemented by splitting the `/components` folder in a similar way. On the other hand, sometimes your desktop and mobile apps won't be very different. Only a few components deep in the tree may have an unalike data model or behavior. **If you find yourself in any of these cases it might be useful to do a split per component**.
 
 ```python{2,3,6,9}
 -- src
@@ -153,11 +153,11 @@ Root level code split is often supplemented by splitting the `/components` folde
 
 `<TopBar />` component has some data/behavior differences that require you to implement it separately for each app. In the same time `/common` folder still contains all shared components.
 
-You can see how is that done for `/components` in [products page example](https://codesandbox.io/s/desktopmobile-code-split-sjbt0?file=/src/components/touch/Product.js).
+You can see how that id done for `/components` in [products page example](https://codesandbox.io/s/desktopmobile-code-split-sjbt0?file=/src/components/touch/Product.js).
 
 **Why is this structure OK?**
 
-Adding to the pros of the previous section **you will have less code to maintain**, since only a few components may require split. Reusing app specific and shared components is also going to be straightforward.
+Adding to the pros of the previous section **you will have less code to maintain**, since only a few components may require a split. Reusing app specific and shared components is also going to be straightforward.
 
 ```javascript{1}
 import ProductDescription from "../../components/desktop/ProductDescription";
@@ -171,7 +171,7 @@ export default function Products() {
 </p>
 
 ### Components with Styling Differences
-Should you create two copies of a component if it contains the same logic, but differs in styling? Looks like it should be shared and placed in the `/common` folder, but in the same time its css will need the good old media query approach.
+Should you create two copies of a component if it contains the same logic, but differs in styling? Looks like it should be shared and placed in the `/common` folder, but at the same time its css will need the good old media query approach.
 
 ```css
 @media (max-width: 768px) { ... }
@@ -205,7 +205,7 @@ Imagine this structure:
    |-- App.js
 ```
 
-`<TopBarLinks />` is shared component and may have some visual diffs. In its css this is addressed with a class.
+`<TopBarLinks />` is a shared component and may have some visual diffs. In its css this is addressed with a class.
 
 ```css
 .TopBarLinks { ... }         /* Desktop */
@@ -242,7 +242,7 @@ Enough said on the possibilities for organizing the codebase. Now, how to glue t
 ## Load Components on Demand 3️⃣
 No matter where the split resides in - application root or individual components, or perhaps both -  its implementation is going to be the same. Ultimately the pages from all earlier examples are also components.
 
-The task is to load only desktop **OR** touch related code in the browser. Loading the whole bundle (all components), but using (rendering) only device specific slice may work, but it's not optimal. A proper implementation requires you to use [dynamic import()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import#Dynamic_Imports).
+The task is to load only desktop **OR** touch related code in the browser. Loading the whole bundle (all components), but using (rendering) only device specific slices may work, but it's not optimal. A proper implementation requires you to use [dynamic import()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import#Dynamic_Imports).
 
 React docs tell you that [Suspense](https://reactjs.org/docs/react-api.html#reactsuspense) relies on that principle underneath and will probably do the job. You could also base your solution on [loadable-components](https://github.com/gregberge/loadable-components) library. For the sake of simplicity and to cover the specific use case of touch/desktop based split, let's further focus on a plain solution.
 
@@ -271,9 +271,9 @@ function App() {
 <sup>See it in the <a target="_blank" href="https://codesandbox.io/s/desktopmobile-code-split-sjbt0?file=/src/App.js">example Codesandbox app</a>.</sup>
 </p>
 
-The `<Import />` component (you can name it differently) accepts two props - `desktop` and `touch`. They expect a function returning dynamic import call. In the example above there are two independent `<Product />` page components that you may want to import/render conditionally.
+The `<Import />` component (you can name it differently) accepts two props - `desktop` and `touch`. They expect a function returning a dynamic import call. In the example above there are two independent `<Product />` page components that you may want to import/render conditionally.
 
-The third prop is `children` function that does the actual rendering. An obvious benefit of using render prop function here is the opportunity to explicitly pass any props to your component if needed.
+The third prop is a `children` function that does the actual rendering. An obvious benefit of using render prop function here is the opportunity to explicitly pass any props to your component if needed.
 
 ```jsx
 {Product =>
@@ -369,13 +369,13 @@ In that reality it's much easier (and often the only thing you can do) to overco
 
 Here is an example: you know that backend will deliver the API in a week, but you also know that you can deliver the UI today. Waiting one week for the backend? The slow backend delivery might be due to organizational issues. The tech solution in that case is to mock the payload and deliver to QA and Product teams early.
 
-The same motive plays role when deciding to avoid backend when code splitting the app.
+The same motive plays a role when deciding to avoid the backend when code splitting the app.
 
 Frontend-only app split will allow for:
  - **development speed** as per less backend deps
  - **flexibility** when changes are requested
 
-**It also means less headache by not having to confront with colleagues and management, and higher confidence as you remain in the javascript land - your comfortable area of expertise.**
+**It also means less headache by not having to confront colleagues and management, and higher confidence as you remain in the javascript land - your comfortable area of expertise.**
 ___
 📩 [Subscribe](https://webup.org/blog/subscribe/) for my next handcrafted Javascript/React write-up. Issued monthly. <br />
 You can also [follow me on Twitter](https://twitter.com/moubi) for more frequent updates.
