@@ -345,7 +345,7 @@ module.exports = {
 ```
 
 ### Babel Plugin
-If you are using Babel the [@babel/plugin-syntax-dynamic-import](https://classic.yarnpkg.com/en/package/@babel/plugin-syntax-dynamic-import) plugin is required in order to properly parse dynamic imports.
+If you are using Babel the [@babel/plugin-syntax-dynamic-import](https://www.npmjs.com/package/@babel/plugin-syntax-dynamic-import) plugin is required in order to properly parse dynamic imports.
 
 ### Eslint Config
 [eslint-plugin-import](https://www.npmjs.com/package/eslint-plugin-import) is also required to support export/import syntax. Don't forget to update your eslint config file:
