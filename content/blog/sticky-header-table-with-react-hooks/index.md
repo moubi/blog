@@ -12,7 +12,7 @@ featuredImage: "sticky-table-header.png"
 
 What follows is not a trivial tutorial on how you should solve the task. It is not a theory or fictional implementation, either. Instead, the focus is around a possible solution tested in real projects that you can easily reuse. It also sorts out some of the edge cases when working with `<table />`.
 
-**Go straight to the [code](#conditionally-import-and-render-components), if that's mostly what your are looking for.**
+**Go straight to the [code](#sticky-header-code-solution), if that's mostly what your are looking for.**
 
 ### Table of Contents:
 
