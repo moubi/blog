@@ -49,7 +49,7 @@ export default function PopupNewsletter() {
           className={styles.close}
           onClick={handleClose}
           style={{
-            right: `${rhythm(1)}`,
+            right: `${rhythm(1.2)}`,
           }}
         />
         <Newsletter />
