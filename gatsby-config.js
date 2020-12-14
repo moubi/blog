@@ -4,7 +4,7 @@ module.exports = {
     title: `webup.org/blog`,
     author: {
       name: `Miroslav Nikolov`,
-      summary: `My two cents on Javascript, React and Open source.`,
+      summary: `My two cents on Frontend, React and Programming.`,
     },
     description: `A blog about React, front-end, open source. Personal perspective, thoughts and solutions of common challenges as a web developer`,
     siteUrl: `https://webup.org`,

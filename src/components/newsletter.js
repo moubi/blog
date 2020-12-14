@@ -48,18 +48,32 @@ export default function Newsletter() {
       ) : (
         <>
           <div>
+            {/* <p>
+              I am sorry for interrupting your read. Hope you find the current
+              writing useful.
+            </p>
+            <p>
+              This is a one time reminder to sync for more future blogs. You can
+              always find the form at the bottom of each post.
+            </p> */}
             <h2
               className={styles.heading}
               style={{
                 fontFamily: "var(--secondaryFontFamily)",
               }}
             >
-              Join the Mail List
+              Join the Inner Group
             </h2>
             <p>
-              A monthly update with my next handcrafted Javascript/React
-              write-up. Reflections on the everyday web dev challenges.
+              Receive my <strong>monthly</strong> blogs on how to solve tough
+              <strong> code</strong> and <strong>human</strong> challenges at
+              work. Frontend, React and dev process knowledge that will{" "}
+              <strong>help your career</strong>.
             </p>
+            <p>
+              Plus, get a <strong>sneak peek</strong> at what's coming next.
+            </p>
+            <p>Free. No spam. No plagiarism.</p>
           </div>
           <form
             className={styles.form}
@@ -97,7 +111,7 @@ export default function Newsletter() {
                 color: "var(--textButton)",
               }}
             >
-              Subscribe
+              Let me in
             </button>
           </form>
         </>
