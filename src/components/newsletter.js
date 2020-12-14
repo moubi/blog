@@ -67,7 +67,7 @@ export default function Newsletter() {
             <p>
               Receive my <strong>monthly</strong> blogs on how to solve tough
               <strong> code</strong> and <strong>human</strong> challenges at
-              work. Frontend, React and dev process knowledge that will{" "}
+              work. Front-end, React and dev process knowledge that will{" "}
               <strong>help your career</strong>.
             </p>
             <p>
