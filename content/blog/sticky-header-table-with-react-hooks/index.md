@@ -372,7 +372,7 @@ Turning a table header sticky could be challenging in contrast to something made
 **On the other hand tables come very handy at presenting array-like data with many default benefits.** That's why a separate blog post was dedicated to the header challenge. The minimum you would need to untangle it is a custom React hook being the main bolt.
 
 ___
-📩 [Subscribe](https://webup.org/blog/subscribe/) for my next handcrafted Javascript/React write-up. Issued monthly. <br />
+📩 [Subscribe](https://webup.org/blog/subscribe/) for my next handcrafted piece on the Front-end. <br />
 You can also [follow me on Twitter](https://twitter.com/moubi) for more frequent updates.
 ___
 

@@ -419,8 +419,7 @@ It is very common for many render prop implementations to use hooks internally s
 
 But hey, your form library can also export both the wrapper component and the hook. This too is very common. That makes working on open source so fun.
 ___
-
-📩 [Subscribe](https://webup.org/blog/subscribe/) for my next handcrafted Javascript/React write-up. Issued monthly. <br />
+📩 [Subscribe](https://webup.org/blog/subscribe/) for my next handcrafted piece on the Front-end. <br />
 You can also [follow me on Twitter](https://twitter.com/moubi) for more frequent updates.
 ___
 

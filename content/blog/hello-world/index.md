@@ -26,7 +26,8 @@ I want a reference place with solutions/guides. I want examples, easy to digest 
 It is also dedicated to React, right? So, it's built based on [Gatsby](https://www.gatsbyjs.org/)'s default [starter-blog](https://github.com/gatsbyjs/gatsby-starter-blog) (with some edits) and inspired by [Dan Abramov](https://twitter.com/dan_abramov)'s [overreacted.io](https://overreacted.io).
 
 ## Resources
-📩 [Subscribe](https://webup.org/blog/subscribe/) for my next handcrafted Javascript/React write-up. Issued monthly. <br />
+
+📩 [Subscribe](https://webup.org/blog/subscribe/) for my next handcrafted piece on the Front-end. <br />
 You can also [follow me on Twitter](https://twitter.com/moubi) for more frequent updates.
 
 _I won't spam or share political views with you._

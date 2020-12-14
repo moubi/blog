@@ -377,7 +377,7 @@ Frontend-only app split will allow for:
 
 **It also means less headache by not having to confront colleagues and management, and higher confidence as you remain in the javascript land - your comfortable area of expertise.**
 ___
-📩 [Subscribe](https://webup.org/blog/subscribe/) for my next handcrafted Javascript/React write-up. Issued monthly. <br />
+📩 [Subscribe](https://webup.org/blog/subscribe/) for my next handcrafted piece on the Front-end. <br />
 You can also [follow me on Twitter](https://twitter.com/moubi) for more frequent updates.
 ___
 
