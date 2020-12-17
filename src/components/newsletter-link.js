@@ -13,8 +13,8 @@ export default function NewsletterLink({ isInBlogPost }) {
         marginBottom: isInBlogPost ? rhythm(1.7) : 0,
       }}
     >
-      <Link to="/subscribe">Get my solutions</Link> on tech challenges to help
-      you level up.
+      <Link to="/subscribe">Get my answers</Link> on real code and human
+      challenges at work.
     </p>
   )
 }
