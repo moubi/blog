@@ -49,6 +49,12 @@ Wordpress2016.overrideThemeStyles = () => ({
   sup: {
     fontSize: typography.rhythm(0.5),
   },
+  ul: {
+    paddingLeft: "20px",
+  },
+  ol: {
+    paddingLeft: "20px",
+  },
 })
 delete Wordpress2016.googleFonts
 

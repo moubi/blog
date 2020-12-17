@@ -48,14 +48,6 @@ export default function Newsletter() {
       ) : (
         <>
           <div>
-            {/* <p>
-              I am sorry for interrupting your read. Hope you find the current
-              writing useful.
-            </p>
-            <p>
-              This is a one time reminder to sync for more future blogs. You can
-              always find the form at the bottom of each post.
-            </p> */}
             <h2
               className={styles.heading}
               style={{
@@ -65,13 +57,14 @@ export default function Newsletter() {
               Join the Inner Group
             </h2>
             <p>
-              Receive my <strong>monthly</strong> blogs on how to solve tough
+              I will be sending you <strong>monthly</strong> blogs on how to
+              solve tough
               <strong> code</strong> and <strong>human</strong> challenges at
-              work. Front-end, React and dev process knowledge that will{" "}
-              <strong>help your career</strong>.
+              work. My Front-end, React and Process knowledge working on
+              multi-million user apps.
             </p>
             <p>
-              Plus, get a <strong>sneak peek</strong> at what's coming next.
+              Plus a <strong>sneak peek</strong> at what's coming next.
             </p>
             <p>Free. No spam. No plagiarism.</p>
           </div>
