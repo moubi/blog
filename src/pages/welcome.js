@@ -6,32 +6,39 @@ import SEO from "../components/seo"
 
 const Welcome = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
+  const siteUrl = data.site.siteMetadata.siteUrl
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="Welcome to webup.org/blog mailing list" />
+      <SEO
+        title="Welcome to webup.org/blog's readers list"
+        meta={[
+          {
+            name: `twitter:card`,
+            content: `summary`,
+          },
+          {
+            name: `twitter:image`,
+            content: siteUrl + data.avatar.childImageSharp.fixed.src,
+          },
+        ]}
+      />
       <article>
         <h1
           style={{
             fontFamily: "var(--secondaryFontFamily)",
           }}
         >
-          Welcome to webup.org/blog
+          Welcome
         </h1>
         <p>
-          You are now part of a friendly list. Expect to get content updates 2-3
-          times per month.
-        </p>
-        <p>
-          I write about <strong>practical</strong> React and Javascript topics.
-          <br />
-          That includes solutions on programming 
-          <strong>challenges</strong> you have, <strong>how-to</strong> guides
-          and maintaining open source.
+          You are now part of a friendly group of readers.
+          <br /> I create new content
+          <strong> 1-2 times a month</strong>.
         </p>
         <p>
           You will not receive any personal stuff or spam. Also feel free to
-          reply to my mails.
+          reply to my emails.
         </p>
         <p>
           For summarized updates and discussions,{" "}
@@ -56,9 +63,17 @@ export default Welcome
 
 export const pageQuery = graphql`
   query {
+    avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
+      childImageSharp {
+        fixed(width: 200, height: 200) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
     site {
       siteMetadata {
         title
+        siteUrl
       }
     }
   }
