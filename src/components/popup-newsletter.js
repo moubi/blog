@@ -89,16 +89,16 @@ export default function PopupNewsletter() {
             <span role="img" aria-label="Hello">
               👋
             </span>{" "}
-            I hope you find the current read useful.
+            I hope you find the read useful.
           </p>
           <p>
             This is my invitation to join the close group of readers.{" "}
             <strong>It's free</strong>.
           </p>
           <p>
-            You can expect a <strong>monthly</strong> blog with words on{" "}
-            <strong>real code</strong> and <strong>human challenges</strong> I
-            face while working on multi-million user apps.
+            You can expect a <strong>monthly</strong> blog on
+            <strong> real code</strong> and <strong>human challenges</strong> I
+            face, working on multi-million user apps.
           </p>
           <form
             action="https://webup.us18.list-manage.com/subscribe/post"
