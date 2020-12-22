@@ -81,8 +81,12 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
                   {title}
                 </Link>
               </h3>
-              <small>
-                {node.frontmatter.date} {" | ⏳ "}
+              <small style={{
+                display: "block",
+                marginBottom: rhythm(1 / 4),
+                ...scale(-0.06),
+              }}>
+                • {node.frontmatter.date} {" | ⏳ "}
                 {node.fields.readingTime.text}
               </small>
             </header>

@@ -50,16 +50,16 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           >
             {post.frontmatter.title}
           </h1>
-          <p
+          <small
             style={{
-              ...scale(-1 / 5),
-              display: `block`,
-              marginBottom: rhythm(1),
+              display: "block",
+              margin: `${rhythm(0.2)} 0 ${rhythm(1)} 0`,
+              ...scale(-0.06),
             }}
           >
             {post.frontmatter.date} {" | ⏳ "}
             {post.fields.readingTime.text}
-          </p>
+          </small>
         </header>
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
         <Share postDetails={post.frontmatter} location={location} />
