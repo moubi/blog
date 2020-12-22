@@ -3,6 +3,7 @@ title: "Sticky Table Header with React Hooks"
 date: "2020-12-01"
 description: "Long tables with an endless scroll. Tables are great presentational medium for data, but it's not straightforward to stick their headers on top. Confronting that limitation with React hooks."
 featuredImage: "sticky-table-header.png"
+legacyViews: 1713
 ---
 <p>
   <img alt="Sticky table header" src="sticky-table-header.png" />

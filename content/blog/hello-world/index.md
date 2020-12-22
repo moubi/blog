@@ -3,6 +3,7 @@ title: Hello World
 date: "2020-06-04"
 description: "Blog about React, Javascript and Front-end. My perspective on common web dev challenges."
 hackerNewsId: ""
+legacyViews: 37
 ---
 
 I need a space to store observations and knowledge that could refer myself and others to when necessary. This is how the blog was born.

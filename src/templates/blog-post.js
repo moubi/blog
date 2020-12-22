@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { Link, graphql } from "gatsby"
 
 import Bio from "../components/bio"
@@ -15,6 +15,26 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const siteTitle = data.site.siteMetadata.title
   const siteUrl = data.site.siteMetadata.siteUrl
   const { previous, next } = pageContext
+  const [postViews, setPostViews] = useState(0)
+
+  // Getting post views from https://counterapi.com/
+  useEffect(() => {
+    const legacyViews = post.frontmatter.legacyViews || 0
+
+    fetch(
+      `https://counterapi.com/api/webup.org/view/${post.id}?startNumber=${legacyViews}`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    )
+      .then(response => response.json())
+      .then(data => {
+        setPostViews(data.value)
+      })
+  })
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -52,13 +72,24 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           </h1>
           <small
             style={{
-              display: "block",
-              margin: `${rhythm(0.2)} 0 ${rhythm(1)} 0`,
+              display: "flex",
+              flexWrap: "wrap",
+              justifyContent: "space-between",
+              margin: `${rhythm(0.3)} 0 ${rhythm(1)} 0`,
               ...scale(-0.06),
             }}
           >
-            {post.frontmatter.date} {" | ⏳ "}
+            {post.frontmatter.date} &nbsp; | {" ⏳ "}
             {post.fields.readingTime.text}
+            {!!postViews && (
+              <span
+                style={{
+                  marginRight: "30px",
+                }}
+              >
+                {postViews} reads
+              </span>
+            )}
           </small>
         </header>
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
@@ -140,6 +171,7 @@ export const pageQuery = graphql`
         }
         hackerNewsId
         reddit
+        legacyViews
       }
       fields {
         readingTime {

@@ -5,6 +5,7 @@ description: "Render props are still valid for the common use case where React h
 featuredImage: "twitter-card.png"
 hackerNewsId: "23614254"
 reddit: "r/reactjs/comments/heeoo6/render_props_better_than_hooks/"
+legacyViews: 721
 ---
 
 Can you guess which code snippet is more efficient and why?

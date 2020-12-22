@@ -3,6 +3,7 @@ title: "Thoughts on Device Based Code Split in React"
 date: "2020-11-02"
 description: "Your company's UI designer got crazy with the new web site. An independent mobile version is born and everybody expects you to code it. Here are some thoughts on the challenge."
 featuredImage: "react-desktop-mobile-code-split.png"
+legacyViews: 830
 ---
 <p>
   <img alt="Desktop/Mobile code split in React" src="react-desktop-mobile-code-split.png" />
