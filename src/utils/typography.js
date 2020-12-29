@@ -55,6 +55,10 @@ Wordpress2016.overrideThemeStyles = () => ({
   ol: {
     paddingLeft: "20px",
   },
+  blockquote: {
+    marginLeft: "0",
+    borderColor: "var(--textLink)",
+  },
 })
 delete Wordpress2016.googleFonts
 
