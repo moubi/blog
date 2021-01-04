@@ -30,6 +30,9 @@ Wordpress2016.overrideThemeStyles = () => ({
     position: "relative",
     color: "var(--textNormal)",
   },
+  "h2, h3, h4, h5, h6": {
+    lineHeight: "1.4",
+  },
   h4: {
     textTransform: "none",
   },
