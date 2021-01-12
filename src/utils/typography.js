@@ -22,6 +22,15 @@ Wordpress2016.overrideThemeStyles = () => ({
   p: {
     color: "var(--textNormal)",
   },
+  "th, td": {
+    color: "var(--textNormal)",
+    borderColor: "var(--textNormal)",
+  },
+  "tr > th": {
+    ...typography.scale(0.2),
+    fontWeight: 900,
+    textAlign: "center",
+  },
   h1: {
     fontWeight: 900,
     color: "var(--textTitle)",
@@ -52,16 +61,22 @@ Wordpress2016.overrideThemeStyles = () => ({
   sup: {
     fontSize: typography.rhythm(0.5),
   },
-  ul: {
-    paddingLeft: "20px",
-  },
-  ol: {
+  "ul, ol": {
     paddingLeft: "20px",
   },
   blockquote: {
-    marginLeft: "0",
+    marginLeft: "20px",
     borderColor: "var(--textLink)",
     borderLeftWidth: "2px",
+  },
+  "@media only screen and (max-width:400px)": {
+    blockquote: {
+      marginLeft: "0",
+    },
+    "ul, ol": {
+      paddingLeft: "20px",
+      marginLeft: "0",
+    },
   },
 })
 delete Wordpress2016.googleFonts
