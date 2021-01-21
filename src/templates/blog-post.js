@@ -7,7 +7,7 @@ import SEO from "../components/seo"
 import Newsletter from "../components/newsletter"
 import PopupNewsletter from "../components/popup-newsletter"
 import NewsletterLink from "../components/newsletter-link"
-import Share from "../components/share"
+// import Share from "../components/share"
 import { rhythm, scale } from "../utils/typography"
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
@@ -93,7 +93,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           </small>
         </header>
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
-        <Share postDetails={post.frontmatter} location={location} />
+        {/* <Share postDetails={post.frontmatter} location={location} /> */}
         <hr
           style={{
             marginBottom: rhythm(1),

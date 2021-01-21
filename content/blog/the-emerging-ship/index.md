@@ -196,11 +196,6 @@ What had happened comes to confirm
 
 Remember this little guide if your next project gets in peril.
 
-___
-📩 [Subscribe](https://webup.org/blog/subscribe/) for my next handcrafted piece on the Front-end. <br />
-You can also [follow me on Twitter](https://twitter.com/moubi) for more frequent updates.
-___
-
 ## Resources
   - "Thoughts on mistakes" - a "Top of the Month newsletter" issue by [Nicholas Zakas](https://twitter.com/slicknet)
   - [When should Extreme
