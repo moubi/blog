@@ -98,7 +98,7 @@ export default function PopupNewsletter() {
           <p>
             You can expect a <strong>monthly</strong> blog on
             <strong> real code</strong> and <strong>human challenges</strong> I
-            face, working on multi-million user apps.
+            face, working on multi-million-user apps.
           </p>
           <form
             action="https://webup.us18.list-manage.com/subscribe/post"

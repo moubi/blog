@@ -61,7 +61,7 @@ export default function Newsletter() {
               solve tough
               <strong> code</strong> and <strong>human</strong> challenges at
               work. My Front-end, React and Process knowledge working on
-              multi-million user apps.
+              multi-million-user apps.
             </p>
             <p>
               Plus a <strong>sneak peek</strong> at what's coming next.
