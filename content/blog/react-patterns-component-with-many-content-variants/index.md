@@ -113,7 +113,7 @@ expect(
 ```
 
 ### Text Components
-You may have any number of these components. They share exactly the same structure — dumb component with a render prop function to accept the texts. File names should be descriptive as that gives you a hint what's going on by both, looking at the folder structure and maintaining the logic in `Box.js`
+You may have any number of these components. They share exactly the same structure — dumb component with a [render prop function](https://reactjs.org/docs/render-props.html#gatsby-focus-wrapper) to accept the texts. File names should be descriptive as that gives you a hint what's going on by both, looking at the folder structure and maintaining the logic in `Box.js`
 
 ```jsx{10}
 // StorageFullText.js
@@ -135,7 +135,7 @@ export default function StorageFullText({ children }) {
 }
 ```
 
-`<StorageFullText />` uses render prop to send back data and is not aware how are texts consumed later on. One of the reasons for using this pattern is the [flexibility render prop components provide over hooks](render-props-vs-hooks/#re-render-only-what-is-relevant) fx.
+`<StorageFullText />` uses render prop to send back data and is not aware how are texts consumed later on. One of the reasons for using this pattern is the [flexibility render prop components provide over hooks](/render-props-vs-hooks/#re-render-only-what-is-relevant) fx.
 
 ## Final Words
 Handling text components may look simple on the surface, but in some situations requires you to take different approach and take an extra step.

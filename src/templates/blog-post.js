@@ -96,7 +96,8 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         {/* <Share postDetails={post.frontmatter} location={location} /> */}
         <hr
           style={{
-            marginBottom: rhythm(1),
+            marginTop: rhythm(1.5),
+            marginBottom: rhythm(1.5),
           }}
         />
         <Newsletter />
