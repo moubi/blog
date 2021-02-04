@@ -1,14 +1,14 @@
 ---
 title: "React Patterns: Component with Unknown Content Variants"
 date: "2021-02-04"
-description: "A dumb component changes its content too often, but the presentation remains the same. What would be a useful pattern in this scenario?"
+description: "A dumb component renders any text passed while its visual appearance remains static. It is also unknown how many new content variations are about to come. What would be a useful React pattern in this scenario?"
 featuredImage: "component-with-dynamic-content-pattern.png.png"
 ---
 <p>
   <img alt="Component with Unknown Content Variants" src="component-with-dynamic-content-pattern.png" />
 </p>
 
-A dumb component renders any text passed to it while the visual appearance remains static. It is also unknown how many new content variations are about to come. What would be a useful React pattern in this scenario?
+A dumb component renders any text passed while its visual appearance remains static. It is also unknown how many new content variations are about to come. What would be a useful React pattern in this scenario?
 
 ## The Problem
 Look at the right side of the picture below.
