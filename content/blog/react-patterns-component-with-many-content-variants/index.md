@@ -2,7 +2,7 @@
 title: "React Patterns: Component with Unknown Content Variants"
 date: "2021-02-04"
 description: "A dumb component renders any text passed while its visual appearance remains static. It is also unknown how many new content variations are about to come. What would be a useful React pattern in this scenario?"
-featuredImage: "component-with-dynamic-content-pattern.png.png"
+featuredImage: "component-with-dynamic-content-pattern.png"
 ---
 <p>
   <img alt="Component with Unknown Content Variants" src="component-with-dynamic-content-pattern.png" />
@@ -17,11 +17,11 @@ Look at the right side of the picture below.
   <img alt="Dumb and Smart React components" src="dumb-vs-smart-component.png" />
 </p>
 
-It displays two lines of text and a link. You will face no issues representing it with a single component until content becomes dynamic and **texts/link need to change**. In such case **presentation (aka design) is the same**, but content may have **fluid variations**.
+It displays two lines of text and a link. You will face no issues representing it with a single component until the content becomes dynamic and **texts/link need to change**. In such case **presentation (aka design) is the same**, but content may have **fluid variations**.
 
 >The challenge is how to organize your code, so it remains simple and allows for painless future changes.
 
-To solve it there are three things to take care of: styling, data and business logic.
+To solve it there are three things to take care of: styling, data, and business logic.
 
 ## The Solution
 It aims for _flexibility_ and _maintainability_. Making future changes should be straightforward as that is the real pain point here — prepare the code for [hidden information causing new uses cases](/the-emerging-ship#incomplete-requirements) to pop in.
@@ -40,7 +40,7 @@ It aims for _flexibility_ and _maintainability_. Making future changes should be
            |-- Text4.js
 
 ```
-The solution involves two component levels — parent component (`<Box />`) and several child components for each text case (`<TextN />`). Note that child component names above are chosen to simplify the picture. Ideally you should name them after each specific use case, fx. `StorageEmptyText.js`, `StorageAboveAverageText.js`, `StorageFullText.js`, etc.
+The solution involves two-component levels — parent component (`<Box />`) and several child components for each textual case (`<TextN />`). Note that child component names above are chosen to simplify the picture. Ideally, you should name them after each specific use case, fx. `StorageEmptyText.js`, `StorageAboveAverageText.js`, `StorageFullText.js`, etc.
 
 ### Box Component
 That's the parent (container) component. Its purpose is to manage business logic and styling.
@@ -113,7 +113,7 @@ expect(
 ```
 
 ### Text Components
-You may have any number of these components. They share exactly the same structure — dumb component with a [render prop function](https://reactjs.org/docs/render-props.html#gatsby-focus-wrapper) to accept the texts. File names should be descriptive as that gives you a hint what's going on by both, looking at the folder structure and maintaining the logic in `Box.js`
+You may have any number of these components. They share the same structure — dumb component with a [render prop function](https://reactjs.org/docs/render-props.html#gatsby-focus-wrapper) to accept the texts. File names should be descriptive as that gives you a hint of what's going on by both, looking at the folder structure and maintaining the logic in `Box.js`
 
 ```jsx{10}
 // StorageFullText.js
@@ -135,9 +135,9 @@ export default function StorageFullText({ children }) {
 }
 ```
 
-`<StorageFullText />` uses render prop to send back data and is not aware how are texts consumed later on. One of the reasons for using this pattern is the [flexibility render prop components provide over hooks](/render-props-vs-hooks/#re-render-only-what-is-relevant) fx.
+`<StorageFullText />` uses render prop to send back data and is not aware of how are texts consumed later on. One of the reasons for using this pattern is the [flexibility render prop components provide over hooks](/render-props-vs-hooks/#re-render-only-what-is-relevant) fx.
 
 ## Final Words
-Handling text components may look simple on the surface, but in some situations requires you to take different approach and take an extra step.
+Handling text components may look simple on the surface, but in some situations requires you to take a different approach and the extra step.
 
-If a component doesn't change its visual representation and structure, but may have many content variants, it make sense to involve less wrappers if possible. The guiding principle is not to be clever about code reusability. Instead go **explicit and minimal** expecting things to change.
+If a component doesn't change its visual representation and structure but may have many content variants, it makes sense to involve fewer wrappers if possible. The guiding principle is to avoid being smart about code reusability. Instead, go **explicit and minimal** expecting things to change.
