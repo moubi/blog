@@ -21,7 +21,7 @@ It displays two lines of text and a link. You will face no issues representing i
 
 >The challenge is how to organize your code, so it remains simple and allows for painless future changes.
 
-To solve it there are three things to take care of: styling, data, and business logic.
+There are three things to take care of along the way: styling, data, and business logic.
 
 ## The Solution
 It aims for _flexibility_ and _maintainability_. Making future changes should be straightforward as that is the real pain point here — prepare the code for [hidden information causing new uses cases](/the-emerging-ship#incomplete-requirements) to pop in.
@@ -135,7 +135,7 @@ export default function StorageFullText({ children }) {
 }
 ```
 
-`<StorageFullText />` uses render prop to send back data and is not aware of how are texts consumed later on. One of the reasons for using this pattern is the [flexibility render prop components provide over hooks](/render-props-vs-hooks/#re-render-only-what-is-relevant) fx.
+`<StorageFullText />` uses render prop to send back data and is not aware of how texts are consumed later on. One of the reasons for using this pattern is the [flexibility render prop components provide over hooks](/render-props-vs-hooks/#re-render-only-what-is-relevant) fx.
 
 ## Final Words
 Handling text components may look simple on the surface, but in some situations requires you to take a different approach and the extra step.
