@@ -1,5 +1,5 @@
 ---
-title: "React Patterns: Component with Unknown Content Variants"
+title: "React Patterns: A Component with Unknown Content Variants"
 date: "2021-02-04"
 description: "A dumb component renders any text passed while its visual appearance remains static. It is also unknown how many new content variations are about to come. What would be a useful React pattern in this scenario?"
 featuredImage: "component-with-dynamic-content-pattern.png"
