@@ -137,6 +137,13 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         </ul>
       </nav>
       <p style={{ textAlign: "right" }}>
+        <a
+          title="webup.org/blog's newsletter"
+          href={`${siteUrl}/blog/subscribe`}
+        >
+          newsletter
+        </a>
+        {" • "}
         <a title="webup.org/blog's rss" href={`${siteUrl}/blog/rss.xml`}>
           rss
         </a>

@@ -10,21 +10,9 @@ const Footer = () => {
   return (
     <footer style={{ marginTop: rhythm(4) }}>
       <p>
-        <OutboundLink
-          href={`https://twitter.com/${social.twitter}`}
-          target="_blank"
-          rel="noreferrer"
-        >
-          twitter
-        </OutboundLink>{" "}
-        {" • "}
-        <OutboundLink
-          href={`https://github.com/${social.github}`}
-          target="_blank"
-          rel="noreferrer"
-        >
-          github
-        </OutboundLink>{" "}
+        <a title="webup.org/blog's newsletter" href="subscribe">
+          newsletter
+        </a>
         {" • "}
         <OutboundLink href={social.about} target="_blank" rel="noreferrer">
           about

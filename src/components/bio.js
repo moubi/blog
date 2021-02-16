@@ -29,15 +29,7 @@ const Bio = () => {
         }}
       />
       <p>
-        Blog by <OutboundLink href={social.about}>{author.name}</OutboundLink> (
-        <OutboundLink href={`https://twitter.com/${social.twitter}`}>
-          twitter
-        </OutboundLink>
-        {`, `}
-        <OutboundLink href={`https://github.com/${social.github}`}>
-          github
-        </OutboundLink>
-        ).
+        Blog by <OutboundLink href={social.about}>{author.name}</OutboundLink>.
         <br />
         {author.summary}
       </p>
