@@ -54,19 +54,29 @@ export default function Newsletter() {
                 fontFamily: "var(--secondaryFontFamily)",
               }}
             >
-              Join the Inner Group
+              GET INVOLVED
             </h2>
+            <h3
+              className={styles.subheading}
+              style={{
+                fontFamily: "var(--secondaryFontFamily)",
+              }}
+            >
+              A front-end newsletter with well-tested content
+            </h3>
             <p>
-              I will be sending you <strong>monthly</strong> blogs on how to
-              solve tough
-              <strong> code</strong> and <strong>human</strong> challenges at
-              work. My Front-end, React and Process knowledge working on
-              multi-million-user apps.
+              I am writing about <strong>code</strong> and{" "}
+              <strong>human</strong> challenges working on multi-million-user
+              apps.
             </p>
             <p>
-              Plus a <strong>sneak peek</strong> at what's coming next.
+              This newsletter includes <strong>front-end</strong> posts,
+              <strong> thoughts</strong> I don't publish on the blog, and a{" "}
+              <strong>sneak peek</strong> at what's coming next.
             </p>
-            <p>Free. No spam. No plagiarism.</p>
+            <p>
+              <strong>Monthly</strong>. No spam. No plagiarism.
+            </p>
           </div>
           <form
             className={styles.form}
@@ -104,7 +114,7 @@ export default function Newsletter() {
                 color: "var(--textButton)",
               }}
             >
-              Let me in
+              SUBSCRIBE
             </button>
           </form>
         </>

@@ -19,9 +19,16 @@
 }
 
 .heading {
-  margin: 0 0 20px 0;
-  font-size: 20px;
+  margin: 0 0 10px 0;
+  font-size: 22px;
   font-weight: 900;
+  text-align: center;
+}
+
+.subheading {
+  margin: 0 0 20px 0;
+  font-size: 18px;
+  font-weight: 600;
   text-align: center;
 }
 

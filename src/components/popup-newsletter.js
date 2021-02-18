@@ -89,16 +89,12 @@ export default function PopupNewsletter() {
             <span role="img" aria-label="Hello">
               👋
             </span>{" "}
-            I hope you find the read useful.
+            I hope you find the current read useful.
           </p>
           <p>
-            This is my invitation to join the close group of readers.{" "}
-            <strong>It's free</strong>.
-          </p>
-          <p>
-            You can expect a <strong>monthly</strong> blog on
-            <strong> real code</strong> and <strong>human challenges</strong> I
-            face, working on multi-million-user apps.
+            If so, consider getting the newsletter. It is about{" "}
+            <strong>front-end code</strong> and <strong>human</strong>{" "}
+            challenges I face working on large-user-base apps.
           </p>
           <form
             action="https://webup.us18.list-manage.com/subscribe/post"
@@ -135,9 +131,9 @@ export default function PopupNewsletter() {
                 color: "var(--textButton)",
               }}
             >
-              Join
+              SUBSCRIBE
             </button>
-            <p>No spam. No plagiarism.</p>
+            <p>Monthly. No spam. No plagiarism.</p>
           </form>
         </>
       )}
