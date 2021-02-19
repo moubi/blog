@@ -1,7 +1,7 @@
 ---
 title: The Current State of HoC, Hooks, and Render Props
 date: "2021-02-19"
-description: "Did React hooks took over or there is still room for the HoC and render props patterns."
+description: "Did React hooks took over or there is still room for the HoC and render prop patterns?"
 hackerNewsId: ""
 ---
 
