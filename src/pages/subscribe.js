@@ -26,6 +26,38 @@ const Subscribe = ({ data, location }) => {
       />
       <article>
         <Newsletter />
+        <p>Some readings others have appreciated:</p>
+        <ul>
+          <li>
+            <a
+              href="/react-device-based-code-split/"
+              title="How to split your React app on the front-end so it supports both desktop and touch devices."
+            >
+              Thoughts on Device Based Code Split in React
+            </a>{" "}
+            - How to split your React app on the front-end so it supports both
+            desktop and touch devices.
+          </li>
+          <li>
+            <a
+              href="/sticky-header-table-with-react-hooks/"
+              title="A how-to guide on creating sticky <table /> header with React hooks."
+            >
+              Sticky Table Header with React Hooks
+            </a>{" "}
+            - A how-to guide on creating sticky &lt;table /&gt; header with
+            React hooks.
+          </li>
+          <li>
+            <a
+              href="/the-emerging-ship/"
+              title="How to split your React app on the front-end so it supports both desktop and touch devices."
+            >
+              The Emerging Ship
+            </a>{" "}
+            - How can developers save a failing project.
+          </li>
+        </ul>
       </article>
     </Layout>
   )

@@ -29,23 +29,59 @@ const Welcome = ({ data, location }) => {
             fontFamily: "var(--secondaryFontFamily)",
           }}
         >
-          Welcome
+          Welcome and thank you for your trust
         </h1>
         <p>
-          You are now part of a friendly group of readers.
-          <br /> I create new content
+          Expect newsletter issues
           <strong> 1-2 times a month</strong>.
         </p>
         <p>
-          You will not receive any personal stuff or spam. Also feel free to
-          reply to my emails.
+          Wonder what to continue with? <br />
+          Here are some readings others have appreciated:
+        </p>
+        <ul>
+          <li>
+            <a
+              href="/react-device-based-code-split/"
+              title="How to split your React app on the front-end so it supports both desktop and touch devices."
+            >
+              Thoughts on Device Based Code Split in React
+            </a>{" "}
+            - How to split your React app on the front-end so it supports both
+            desktop and touch devices.
+          </li>
+          <li>
+            <a
+              href="/sticky-header-table-with-react-hooks/"
+              title="A how-to guide on creating sticky <table /> header with React hooks."
+            >
+              Sticky Table Header with React Hooks
+            </a>{" "}
+            - A how-to guide on creating sticky &lt;table /&gt; header with
+            React hooks.
+          </li>
+          <li>
+            <a
+              href="/the-emerging-ship/"
+              title="How to split your React app on the front-end so it supports both desktop and touch devices."
+            >
+              The Emerging Ship
+            </a>{" "}
+            - How can developers save a failing project.
+          </li>
+        </ul>
+        <p>
+          Share the blog (
+          <a
+            href={`${siteUrl}/blog`}
+            title="Front-end, React, Programming — blog by Miroslav Nikolov"
+          >
+            {siteUrl}/blog
+          </a>
+          ) with your peers.
         </p>
         <p>
-          For summarized updates and discussions,{" "}
-          <a href="https://twitter.com/moubi" target="_blank" rel="noreferrer">
-            follow me on Twitter
-          </a>
-          .
+          <i>You won't receive any personal stuff or spam.</i>
         </p>
         <div align="center">
           <h2>
