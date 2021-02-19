@@ -13,7 +13,7 @@ During ReactEurope [Erik Rasmussen](https://twitter.com/erikras) did a good roun
 
 If I have to make my own conclusion it would sound like that:
 
-> HoC, hooks and render props have their own use cases and non of them is a full replacement of the others. In some cases HoCs and components with a render prop my even make more sense.
+> HoC, hooks and render props have their own use cases and none of them is a full replacement of the others. In some cases HoCs and components with a render prop my even make more sense.
 
 A good example of the above is the [connect()](https://react-redux.js.org/api/connect) function from React Redux used to connect your component to the store. It does return a HoC.
 
