@@ -86,13 +86,17 @@ export default function PopupNewsletter() {
       ) : (
         <>
           <p>
-            <span role="img" aria-label="Hello">
+            <span
+              role="img"
+              aria-label="Hello"
+              style={{ display: "block", textAlign: "center" }}
+            >
               👋
-            </span>{" "}
+            </span>
             I hope you find the current read useful.
           </p>
           <p>
-            If so, consider getting the newsletter. It is about{" "}
+            If so, consider joining the newsletter too. It covers{" "}
             <strong>front-end code</strong> and <strong>human</strong>{" "}
             challenges I face working on large-user-base apps.
           </p>
