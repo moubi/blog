@@ -23,7 +23,6 @@ export const useSiteMetadata = () => {
             summary
           }
           social {
-            twitter
             github
             about
           }
