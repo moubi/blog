@@ -1,6 +1,8 @@
 import React, { useState } from "react"
 import NewsletterConfirm from "./newsletter-confirm"
-import { trackCustomEvent } from "gatsby-plugin-google-analytics"
+import { trackCustomEvent, OutboundLink } from "gatsby-plugin-google-analytics"
+import mailIcon from "../../content/assets/mail.svg"
+
 import styles from "./newsletter.module.css"
 
 export default function Newsletter() {
@@ -54,30 +56,21 @@ export default function Newsletter() {
                 fontFamily: "var(--secondaryFontFamily)",
               }}
             >
-              GET INVOLVED
+              Join a front-end newsletter with well-tested content
             </h2>
-            <h3
-              className={styles.subheading}
-              style={{
-                fontFamily: "var(--secondaryFontFamily)",
-              }}
-            >
-              A front-end newsletter with well-tested content
-            </h3>
             <p>
-              I am writing about <strong>code</strong> and{" "}
-              <strong>human</strong> challenges working on multi-million-user
-              apps.
+              I write about <strong>code and programming</strong> challenges
+              when building software. Things I can't easily find answers to by
+              just Googling.
             </p>
             <p>
-              This newsletter includes <strong>front-end</strong> posts,
-              <strong> thoughts</strong> I don't publish on the blog, and a{" "}
-              <strong>sneak peek</strong> at what's coming next.
-            </p>
-            <p>
-              <strong>Monthly</strong>. No spam. No plagiarism.
+              Each newsletter comes with helpful
+              <strong> thoughts and links</strong> not published elsewhere and a{" "}
+              <strong>sneak peek</strong> at what's next. <br />
+              Sent <strong>monthly</strong>, spam-free.
             </p>
           </div>
+          <img className={styles.img} src={mailIcon} alt="Newsletter icon" />
           <form
             className={styles.form}
             action="https://webup.us18.list-manage.com/subscribe/post"
@@ -103,20 +96,30 @@ export default function Newsletter() {
               }}
               required
               type="email"
-              placeholder="Email"
+              placeholder="Your email"
               name="MERGE0"
               id="MERGE0"
             />
-            <br />
             <button
               className={styles.btn}
               style={{
                 color: "var(--textButton)",
               }}
             >
-              SUBSCRIBE
+              Subscribe
             </button>
           </form>
+          <p className={styles.info}>
+            Need to see a{" "}
+            <OutboundLink
+              href="https://mailchi.mp/0c360f94c1ae/issue-7-react-testing"
+              title="Previous newsletter issue"
+              target="_blank"
+            >
+              previous issue
+            </OutboundLink>
+            ?
+          </p>
         </>
       )}
     </section>
