@@ -1,13 +1,11 @@
 import React, { useState, useEffect, useCallback } from "react"
 import { rhythm } from "../utils/typography"
 import { trackCustomEvent } from "gatsby-plugin-google-analytics"
-import NewsletterConfirm from "./newsletter-confirm"
 
 import styles from "./popup-newsletter.module.css"
 
 export default function PopupNewsletter() {
   const [isShown, setIsShown] = useState(false)
-  const [success, setSuccess] = useState(false)
 
   const handleClose = useCallback(() => {
     setIsShown(false)
@@ -38,36 +36,6 @@ export default function PopupNewsletter() {
     }
   }, [setIsShown])
 
-  const handleSubmit = e => {
-    e.preventDefault()
-    const email = encodeURIComponent(e.target.querySelector("#MERGE0").value)
-
-    // Since the request is to another server (not set for CORS)
-    // it is not possible to read the response, so I assume it was
-    // a success
-    fetch(
-      `https://webup.us18.list-manage.com/subscribe/post-json?u=a8b6e7feef85415df77a72883&id=a1d768b4bc&MERGE0=${email}&c=?`,
-      {
-        method: "GET",
-        mode: "no-cors",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    ).then(() => {
-      setSuccess(true)
-
-      trackCustomEvent({
-        // string - required - The object that was interacted with (e.g.video)
-        category: "Subscribe form submitted (popup)",
-        // string - required - Type of interaction (e.g. 'play')
-        action: "submit",
-        // string - optional - Useful for categorizing events (e.g. 'Spring Campaign')
-        label: email,
-      })
-    })
-  }
-
   if (!isShown) {
     return null
   }
@@ -81,66 +49,24 @@ export default function PopupNewsletter() {
       }}
     >
       <i role="presentation" className={styles.close} onClick={handleClose} />
-      {success ? (
-        <NewsletterConfirm />
-      ) : (
-        <>
-          <p>
-            <span
-              role="img"
-              aria-label="Hello"
-              style={{ display: "block", textAlign: "center" }}
-            >
-              👋
-            </span>
-            I hope you find the current read useful.
-          </p>
-          <p>
-            If so, consider joining the newsletter too. It covers{" "}
-            <strong>front-end code</strong> and <strong>human</strong>{" "}
-            challenges I face working on large-user-base apps.
-          </p>
-          <form
-            action="https://webup.us18.list-manage.com/subscribe/post"
-            method="post"
-            onSubmit={handleSubmit}
-          >
-            <input
-              aria-label="Mailchimp api field 1"
-              type="hidden"
-              name="u"
-              value="a8b6e7feef85415df77a72883"
-            />
-            <input
-              aria-label="Mailchimp api field 2"
-              type="hidden"
-              name="id"
-              value="a1d768b4bc"
-            />
-            <input
-              aria-label="Email field"
-              style={{
-                border: "var(--borderInput)",
-              }}
-              required
-              type="email"
-              placeholder="Email"
-              name="MERGE0"
-              id="MERGE0"
-            />
-            <br />
-            <button
-              className={styles.btn}
-              style={{
-                color: "var(--textButton)",
-              }}
-            >
-              SUBSCRIBE
-            </button>
-            <p>Monthly. No spam. No plagiarism.</p>
-          </form>
-        </>
-      )}
+      <span
+        role="img"
+        aria-label="Hello"
+        style={{ display: "block", textAlign: "center", fontSize: rhythm(1) }}
+      >
+        👋
+      </span>
+      <p>
+        Consider joining the{" "}
+        <a
+          href="/subscribe"
+          title="webup.org/blog's newsletter"
+          target="_blank"
+        >
+          newsletter
+        </a>
+        ? It comes with useful posts like this and more.
+      </p>
     </div>
   )
 }

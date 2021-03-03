@@ -13,7 +13,9 @@ export default function NewsletterLink({ isInBlogPost }) {
         marginBottom: isInBlogPost ? rhythm(1.7) : 0,
       }}
     >
-      <Link to="/subscribe">Get the monthly newsletter</Link>
+      <Link to="/subscribe" title="webup.org/blog's newsletter">
+        Get the monthly newsletter
+      </Link>
     </p>
   )
 }
