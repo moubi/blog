@@ -22,6 +22,12 @@ Wordpress2016.overrideThemeStyles = () => ({
   p: {
     color: "var(--textNormal)",
   },
+  summary: {
+    color: "var(--textNormal)",
+    marginBottom: "1em",
+    cursor: "pointer",
+    fontWeight: 600,
+  },
   "th, td": {
     color: "var(--textNormal)",
     borderColor: "var(--textNormal)",

@@ -18,23 +18,23 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const [postViews, setPostViews] = useState(0)
 
   // Getting post views from https://counterapi.com/
-  useEffect(() => {
-    const legacyViews = post.frontmatter.legacyViews || 0
+  // useEffect(() => {
+  //   const legacyViews = post.frontmatter.legacyViews || 0
 
-    fetch(
-      `https://counterapi.com/api/webup.org/view/${post.id}?startNumber=${legacyViews}`,
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    )
-      .then(response => response.json())
-      .then(data => {
-        setPostViews(data.value)
-      })
-  })
+  //   fetch(
+  //     `https://counterapi.com/api/webup.org/view/${post.id}?startNumber=${legacyViews}`,
+  //     {
+  //       method: "GET",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //     }
+  //   )
+  //     .then(response => response.json())
+  //     .then(data => {
+  //       setPostViews(data.value)
+  //     })
+  // })
 
   return (
     <Layout location={location} title={siteTitle}>
