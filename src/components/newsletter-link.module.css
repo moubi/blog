@@ -4,11 +4,11 @@
   font-weight: 600;
 }
 
-.NewsletterLink:before {
-  content: "📩";
-  margin-right: 10px;
-  font-size: 30px;
+.NewsletterLink img {
+  height: 30px;
+  margin: 0 10px 0 0;
   vertical-align: middle;
+  transform: rotate(-8deg);
 }
 
 @media screen and (max-width: 600px) {
