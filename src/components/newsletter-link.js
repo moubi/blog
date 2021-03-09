@@ -16,7 +16,7 @@ export default function NewsletterLink({ isInBlogPost }) {
     >
       <img src={mailIcon} alt="Newsletter mail icon" />
       <Link to="/subscribe" title="webup.org/blog's newsletter">
-        Get the monthly newsletter
+        Interested in getting future updates?
       </Link>
     </p>
   )

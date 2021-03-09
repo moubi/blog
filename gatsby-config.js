@@ -60,6 +60,7 @@ module.exports = {
             options: {
               maxWidth: 630,
               wrapperStyle: "margin: 0",
+              backgroundColor: "transparent",
             },
           },
           {

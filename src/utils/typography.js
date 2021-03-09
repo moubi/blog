@@ -26,7 +26,17 @@ Wordpress2016.overrideThemeStyles = () => ({
     color: "var(--textNormal)",
     marginBottom: "1em",
     cursor: "pointer",
-    fontWeight: 600,
+    fontWeight: 900,
+  },
+  "summary:before": {
+    marginRight: "6px",
+    fontSize: typography.rhythm(0.6),
+  },
+  "details summary:before": {
+    content: "'⇨'",
+  },
+  "details[open] summary:before": {
+    content: "'⇩'",
   },
   "th, td": {
     color: "var(--textNormal)",
