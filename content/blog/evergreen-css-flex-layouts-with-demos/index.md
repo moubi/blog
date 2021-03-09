@@ -17,7 +17,7 @@ ___
 _Click to jump to each example._
 
 <div class="table-of-contents">
-  <a href="#">
+  <a href="#flex-cards-on-a-touch-device">
     <span>Flex cards on a touch device</span>
     <div class="parent1 box">
       <div></div>
@@ -26,7 +26,7 @@ _Click to jump to each example._
     </div>
   </a>
 
-  <a href="#">
+  <a href="#flex-cards-with-equal-height">
     <span>Flex cards with equal height</span>
     <div class="parent2 box">
       <div></div>
@@ -35,7 +35,7 @@ _Click to jump to each example._
     </div>
   </a>
 
-  <a href="#">
+  <a href="#flex-cards-with-content-based-height">
     <span>Flex Cards with content-based height</span>
     <div class="parent3 box">
       <div></div>
@@ -44,7 +44,7 @@ _Click to jump to each example._
     </div>
   </a>
 
-  <a href="#">
+  <a href="#a-flex-card-with-content-controlled-width">
     <span>A flex card with content-controlled width</span>
     <div class="parent4 box">
       <div></div>
@@ -52,7 +52,7 @@ _Click to jump to each example._
     </div>
   </a>
 
-  <a href="#">
+  <a href="#centered-flex-cards">
     <span>Centered flex cards</span>
     <div class="parent9 box">
       <div></div>
@@ -60,7 +60,7 @@ _Click to jump to each example._
     </div>
   </a>
 
-  <a href="#">
+  <a href="#plans-and-prices-flex-cards">
     <span>Plans and prices flex cards</span>
     <div class="parent5 box">
       <div></div>
@@ -69,7 +69,7 @@ _Click to jump to each example._
     </div>
   </a>
 
-  <a href="#">
+  <a href="#three-column-flex-layout-with-two-sidebars">
     <span>Three-column flex layout with two sidebars</span>
     <div class="parent6 box">
       <div></div>
@@ -78,7 +78,7 @@ _Click to jump to each example._
     </div>
   </a>
 
-  <a href="#">
+  <a href="#webpage-flex-layout-with-a-header-content-and-footer">
     <span>Webpage flex layout with a Header, Content, and Footer</span>
     <div class="parent7 box">
       <div></div>
@@ -87,7 +87,7 @@ _Click to jump to each example._
     </div>
   </a>
 
-  <a href="#">
+  <a href="#webpage-flex-layout-with-a-header-footer-and-sidebar">
     <span>Webpage flex layout with a Header, Footer, and Sidebar</span>
     <div class="parent8 box">
       <div class="child"></div>
