@@ -1,7 +1,7 @@
 ---
 title: "Evergreen CSS Flex Layouts With Live Demos"
 date: "2021-03-09"
-description: "A dumb component renders any text passed while its visual appearance remains static. It is also unknown how many new content variations are about to come. What would be a useful React pattern in this scenario?"
+description: "You have to build this non-trivial UI layout over and over again and Google brings in the usual CSS flex (flexbox) guides to help with. But you still need to do it yourself and nothing that can be copy-pasted for a good start."
 featuredImage: "css-flex-layout-grid-social.png"
 ---
 <p>
