@@ -1,6 +1,6 @@
 ---
 title: "Evergreen CSS Flex Layouts With Live Demos"
-date: "2021-03-10"
+date: "2021-03-09"
 description: "A dumb component renders any text passed while its visual appearance remains static. It is also unknown how many new content variations are about to come. What would be a useful React pattern in this scenario?"
 featuredImage: "css-flex-layout-grid-social.png"
 ---
@@ -471,14 +471,14 @@ Most of these CSS flex layout demos are very straightforward. Something relative
 <style loading="lazy">
   .table-of-contents {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-wrap: wrap;
   }
 
   .table-of-contents a {
     position: relative;
-    width: 140px;
-    height: 140px;
+    width: 138px;
+    height: 138px;
     padding: 5px;
     margin-bottom: 20px;
     text-align: center;
