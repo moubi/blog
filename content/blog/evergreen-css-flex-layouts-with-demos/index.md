@@ -1,7 +1,7 @@
 ---
 title: "Evergreen CSS Flex Layouts With Live Demos"
 date: "2021-03-09"
-description: "You have to build this non-trivial UI layout over and over again and Google brings in the usual CSS flex (flexbox) guides to help with. But you still need to do it yourself and nothing that can be copy-pasted for a good start."
+description: "A growing list of CSS flex demos with code samples to copy-paste when building your next page layout."
 featuredImage: "css-flex-layout-grid-social.png"
 ---
 <p>
