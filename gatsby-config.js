@@ -15,6 +15,12 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: `UA-161687762-1`,
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/blog`,
@@ -98,12 +104,6 @@ module.exports = {
         //
         // Defaults to null
         defaultDataLayer: { platform: "gatsby" },
-      },
-    },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: `UA-161687762-1`,
       },
     },
     {

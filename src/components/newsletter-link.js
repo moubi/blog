@@ -5,7 +5,7 @@ import mailIcon from "../../content/assets/mail.svg"
 
 import styles from "./newsletter-link.module.css"
 
-export default function NewsletterLink({ isInBlogPost }) {
+export default function NewsletterLink({ isInBlogPost = false }) {
   return (
     <p
       className={styles.NewsletterLink}

@@ -51,6 +51,7 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
     <Layout location={location} title={siteTitle}>
       <SEO
         title="All posts"
+        description="A list of all web dev posts and essays at webup.org/blog"
         meta={[
           {
             name: `twitter:card`,
