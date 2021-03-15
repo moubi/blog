@@ -59,7 +59,7 @@ export default function PopupNewsletter() {
       <p>
         Consider joining the{" "}
         <a
-          href="/subscribe"
+          href="https://webup.org/blog/subscribe"
           title="webup.org/blog's newsletter"
           target="_blank"
         >
