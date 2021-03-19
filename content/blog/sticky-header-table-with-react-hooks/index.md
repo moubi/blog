@@ -9,7 +9,7 @@ legacyViews: 1713
   <img alt="Sticky table header" src="sticky-table-header.png" />
 </p>
 
-**Using a `<table />` element instead of flexbox for data presentation is a good thing. How to turn the table header sticky with the help of React in that case? How to apply the solution into a production code?** This blog post is all about that.
+**Using the `<table />` element instead of flexbox for data presentation is a good thing. How to turn the table header sticky with the help of React in that case? How to use it then in production code?** This blog post is all about that.
 
 What follows is not a trivial tutorial on how you should solve the task. It is not a theory or fictional implementation, either. Instead, the focus is around a possible solution tested in real projects that you can easily reuse. It also sorts out some of the edge cases when working with `<table />`.
 
@@ -60,17 +60,17 @@ The table-like layout above is styled with flex and looks very similar to:
 </div>
 ```
 
-A question quickly arises: How easy would be to iterate over the headers and rows data with the given markup?
+A question arises: How ergonomic is to iterate over the headers and rows data with the given markup?
 
 **Contrary, some of the table benefits include:**
   1. Column width control via header cells
   2. Painless component-wise split between header and content (table rows)
-  3. Works out of the box (no css)
+  3. Works out of the box (no CSS)
 
-All these are closely related to the challenges behind turning table headers (`<thead />`) into sticky items. Understanding them, should help you better follow the code solution after.
+All these play a role in the challenges behind turning table headers (`<thead />`) into sticky items. Understanding them, should help you better follow the code solution after.
 ___
 
-You can build table layouts by using the usual `<table />` tag or achieve the same via css with `display: table` and semantic elements (`<div />`).
+You can build table layouts by using the usual `<table />` tag or achieve the same via CSS with `display: table` and semantic elements (`<div />`).
 
 ```jsx{3,9}
 // This
@@ -98,7 +98,7 @@ Same visual result. The first one, though, will cause React to complain (also in
 - Warning: validateDOMNesting(...): <thead> cannot appear as a child of <div>.
 ```
 
-For the sake of simplicity and to be more explicit, all examples that come after are based on the `<table />` element.
+For the sake of simplicity and to be more explicit, all examples from now on are based on the `<table />` element.
 
 Back on the benefits.
 
@@ -125,12 +125,12 @@ It may appear counterintuitive since the header and body cells are placed far fr
 
 In this example the width of all `<td />` elements will be the same as the width set with `<th style="width: 200px;">Header cell</th>`.
 
-**You get a side effect that allows for easy control over columns size with no additional cost of setting extensive css rules.**
+**You get a side effect that allows for easy control over columns size with no additional cost of setting extensive CSS rules.**
 
 ### Header and Content Component Split
-Apart from column sizing, sorting and filtering features are too mostly attached to the headers. It turns out they are very powerful unit for ruling the whole table. Such dependencies pop in especially whenever you need to split the table into React components.
+Apart from column sizing, sorting and filtering are mostly attached to the headers too. It turns out headers are very powerful unit for ruling the whole table. Such a connection pops in useful whenever you need to split the table into more React components.
 
-Look into this Table component interface (without getting into details):
+Given this Table component interface (ignore details):
 
 ```jsx
   <Table sortable headers={["Country", "Population"]} data={data}>
@@ -142,17 +142,17 @@ Look into this Table component interface (without getting into details):
   </Table>
 ```
 
-[This structure comes natural](https://reactjs.org/docs/fragments.html#motivation) because:
+[its structure comes natural](https://reactjs.org/docs/fragments.html#motivation) because:
 
  1. It follows how tables render in the DOM (_with separate header and body sections_).
 
  2. Sorting functionality is attached to the header.
 
-Headers set their own styles. That includes sorting indicators, hover states, but behavior (click handlers) too. A separate component that orchestrates the whole content being decoupled from it.
+Headers set their own styles. That includes sorting indicators, hover states and behavior (click handlers).
 
  3. The content is not aware of its context.
 
-Components like `<TableDataRow />` may live outside the table. It accepts a slice of a pre-sorted data and simply renders a row with its own styling. **This component is not aware of its context and doesn't need to. With one exception: the amount of cells (`<td />`) it displays must be the same as in the header.**
+`<TableDataRow />` may live outside the table. It accepts a slice of a pre-sorted data and simply renders a row with its own styling. **This component is not aware of its context and doesn't need to. With one exception: the number of cells (`<td />`) it displays must be the same as in the header.**
 
 ### Tables Work Out of the Box
 [Tables are straightforward and well known](https://css-tricks.com/complete-guide-table-element/). You don't need additional code to achieve a basic presentation for a given data set. By simply using the `<table />` structure you already have a form for the numbers.
@@ -165,10 +165,10 @@ The same is not true for **flexbox** as discussed earlier.
 
 This is the demo implementation and its code can be found in the [CodeSandbox project](https://codesandbox.io/s/sticky-header-table-with-react-3j5zy?file=/src/Table.js). The stickiness is achieved by a simple `<Table />` component and a `useStickyHeader` React hook.
 
-**Reuse it by adding your custom table styles in [styles.css](https://codesandbox.io/s/sticky-header-table-with-react-3j5zy?file=/src/styles.css).**
+**Reuse it by adding your own table styles in [styles.css](https://codesandbox.io/s/sticky-header-table-with-react-3j5zy?file=/src/styles.css).**
 
 ### `<Table />` Component Interface
-The Table component itself is rendered like so
+The Table component itself can be used like so
 
 ```jsx{14}
 // App.js
@@ -246,7 +246,7 @@ function Table({ headers = [], data = [] }) {
 <sup>View <code>Table.js</code> in <a target="_blank" href="https://codesandbox.io/s/sticky-header-table-with-react-3j5zy?file=/src/Table.js">CodeSandbox</a>.<sup>
 </p>
 
-A few important aspects require a bit of details here.
+A few important moments need a bit of details here.
 
 ```javascript
 const { tableRef, isSticky } = useStickyHeader();
@@ -281,10 +281,10 @@ That part renders a sticky header if `isSticky` is true.
 
 The sticky element above should inherit the original `<table />`'s styling in order to achieve the same appearance.
 
-Another thing to note - there are two calls of `renderHeader()`. It means two `<thead />`s in the markup if stickiness is enabled. **This is required. The original header needs to fill the physical space on top of the table. And it can't go sticky since `position: fixed` takes elements [out of their context](https://developer.mozilla.org/en-US/docs/Web/CSS/position#Syntax). In this case introducing a second copy of the header is one way to address the issue.**
+Another thing to note - there are two calls of `renderHeader()`. It means two `<thead />`s in the markup if stickiness is on. **This is required. The original header needs to fill the physical space on top of the table. And it can't go sticky since `position: fixed` takes elements [out of their context](https://developer.mozilla.org/en-US/docs/Web/CSS/position#Syntax). In this case introducing a second copy of the header is one way to address the issue.**
 
 ### `useStickyHeader()` Implementation
-The `useStickyHeader` hook is probably the only piece of code you would need given the notes on the `<Table />` component.
+The `useStickyHeader` hook is probably the only piece of code you would need.
 
 ```javascript
 // useStickyHeader.js
@@ -341,7 +341,7 @@ const handleScroll = useCallback(({ top, bottom }) => {
 }, [isSticky]);
 ```
 
-And here follow the necessary calculations. `{ top, bottom }` describes the table's position on the screen. Once it starts passing off (`top <= 0`) or there is a visual space for at least two headers (`bottom > 2 * 68`) - the sticky mode is enabled.
+And here follow the necessary calculations. `{ top, bottom }` describes the table's position on the screen. Once it starts passing off (`top <= 0`) or there is a visual space for at least two headers (`bottom > 2 * 68`)—the sticky mode is enabled.
 
 <p>
   <img alt="Sticky table header" src="header-close-to-the-edge.png" />
@@ -370,7 +370,7 @@ The full solution lives [here](https://codesandbox.io/s/sticky-header-table-with
 
 Turning a table header sticky could be challenging in contrast to something made out of flexbox. It is frustrating to see that simply applying `position: fixed` to the header doesn't magically work. And perhaps having to render two `<thead />`s is too much.
 
-**On the other hand tables come very handy at presenting array-like data with many default benefits.** That's why a separate blog post was dedicated to the header challenge. The minimum you would need to untangle it is a custom React hook being the main bolt.
+**On the other hand tables come very handy at presenting array-like data with many default benefits.** It is the reason for this separate blog post dedicated to the header challenge with a custom React hook being the main bolt.
 
 ## Resources
   - [A Complete Guide to the Table Element](https://css-tricks.com/complete-guide-table-element/) - deep into tables by Chris Coyier.
@@ -379,4 +379,6 @@ Turning a table header sticky could be challenging in contrast to something made
   - [Building Your Own Hooks](https://reactjs.org/docs/hooks-custom.html) - the official guide behind custom hook extraction.
   - [CSS: Cascading Style Sheets - position](https://developer.mozilla.org/en-US/docs/Web/CSS/position#Syntax) - more about `position: fixed` on MDN.
   - [Render Props vs React Hooks](https://webup.org/blog/render-props-vs-hooks/) - pattern comparison to help when deciding on component interfaces.
+
+Thanks for reading.
 
