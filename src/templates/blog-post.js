@@ -81,15 +81,14 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           >
             {post.frontmatter.date} &nbsp; | {" ⏳ "}
             {post.fields.readingTime.text}
-            {!!postViews && (
-              <span
-                style={{
-                  marginRight: "30px",
-                }}
-              >
-                {postViews} unique reads
-              </span>
-            )}
+            <span
+              style={{
+                visibility: !!postViews ? "visible" : "hidden",
+                marginRight: "30px",
+              }}
+            >
+              {postViews} unique reads
+            </span>
           </small>
         </header>
         <section dangerouslySetInnerHTML={{ __html: post.html }} />

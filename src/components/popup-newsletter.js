@@ -62,6 +62,7 @@ export default function PopupNewsletter() {
           href="https://webup.org/blog/subscribe"
           title="webup.org/blog's newsletter"
           target="_blank"
+          rel="noreferrer noopener"
         >
           newsletter
         </a>
