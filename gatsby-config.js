@@ -1,12 +1,12 @@
 module.exports = {
   pathPrefix: `/blog`,
   siteMetadata: {
-    title: `webup.org/blog`,
+    title: `Blog | Miroslav Nikolov`,
     author: {
       name: `Miroslav Nikolov`,
       summary: `My two cents on Front-end, React and Programming.`,
     },
-    description: `A blog about React, front-end, open source. Personal perspective, thoughts and solutions of common challenges as a web developer`,
+    description: `A blog about React, front-end, open source. Personal perspective, thoughts and solutions Google is silent about.`,
     siteUrl: `https://webup.org`,
     social: {
       github: `moubi`,
