@@ -14,7 +14,7 @@ export default function NewsletterLink({ isInBlogPost = false }) {
         marginBottom: isInBlogPost ? rhythm(1.7) : 0,
       }}
     >
-      <img src={mailIcon} alt="Newsletter mail icon" />
+      <img src={mailIcon} alt="Newsletter mail icon" width="30" height="30" />
       <Link to="/subscribe" title="webup.org/blog's newsletter">
         Interested in getting future updates?
       </Link>
