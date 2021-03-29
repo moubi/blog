@@ -1,7 +1,7 @@
 module.exports = {
   pathPrefix: `/blog`,
   siteMetadata: {
-    title: `webup.org`,
+    title: `webup.org/blog`,
     author: {
       name: `Miroslav Nikolov`,
       summary: `My two cents on Front-end, React and Programming.`,
