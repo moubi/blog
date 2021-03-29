@@ -20,7 +20,6 @@ module.exports = {
         trackingId: `UA-161687762-1`,
         head: true,
         defer: true,
-        pageTransitionDelay: 500,
       },
     },
     {
