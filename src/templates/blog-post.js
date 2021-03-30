@@ -5,8 +5,8 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Newsletter from "../components/newsletter"
-import PopupNewsletter from "../components/popup-newsletter"
 import NewsletterLink from "../components/newsletter-link"
+// import PopupNewsletter from "../components/popup-newsletter"
 // import Share from "../components/share"
 import { rhythm, scale } from "../utils/typography"
 
@@ -100,7 +100,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           }}
         />
         <Newsletter />
-        <PopupNewsletter />
+        {/* <PopupNewsletter /> */}
         <footer
           style={{
             marginTop: rhythm(2),
