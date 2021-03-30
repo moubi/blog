@@ -98,6 +98,29 @@ _Click to jump to each example._
       <div class="child"></div>
     </div>
   </a>
+
+  <a href="#flexbox-tag-cloud">
+    <span>Flexbox tag cloud</span>
+    <div class="parent10 box">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </a>
 </div>
 
 Display flex or flexbox is still the [preferred way for building web grids and layouts in 2021](https://almanac.httparchive.org/en/2020/css#flexbox-and-grid-adoption) and is about to stay on top for quite some time. For that reason don't feel doubtful about the evergreen demos and code samples below as they still serve very well when it comes to alignment and templating.
@@ -463,6 +486,40 @@ A page layout with header, content, and footer sections is evergreen. You may lo
 
 This page layout is a bit more complex and requires nested flexbox items. It can be built on top of the previous flex demo. The middle section (`.main`) is split into sidebar and content columns and represents a separate "parent" with `display: flex`. The `.content` area takes most of the space thanks to `flex-grow: 1`. **Setting an explicit width and height to those elements in the real use case is up to you**.
 
+## Flexbox Tag Cloud
+
+<iframe height="265" style="width: 100%;" scrolling="no" title="CSS Flex Tag Cloud" src="https://codepen.io/moubi/embed/mdROVrP?height=265&theme-id=dark&default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/moubi/pen/mdROVrP'>CSS Flex Tag Cloud</a> by Miroslav Nikolov
+  (<a href='https://codepen.io/moubi'>@moubi</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+<details open>
+<summary>CSS Code</summary>
+
+```css
+.parent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+```
+</details>
+
+<details>
+<summary>HTML structure</summary>
+
+```html
+<ul class="parent">
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
+```
+</details>
+
+Tag clouds may seem scary at first but it's actually quite straightforward to achieve with flex. The only thing you need to set is `justify-content: center` for the items to be centered within the row and `flex-wrap: wrap` to drop on a new line when running out of space.
+
 ## Final Words
 Most of these CSS flex layout demos are very straightforward. Something relatively easy to achieve with the rules you can find listed and explained in any [flexbox cheat-sheet](https://yoksel.github.io/flex-cheatsheet/) on the Internet. But flexbox can build more complex grids. Usually, grids like the Mosaic view (aka Masonry) is done with some JavaScript help while [flex alone can do that too](https://tobiasahlin.com/blog/common-flexbox-patterns/#masonry-or-mosaic).
 
@@ -471,7 +528,7 @@ Most of these CSS flex layout demos are very straightforward. Something relative
 <style loading="lazy">
   .table-of-contents {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
   }
 
@@ -636,5 +693,26 @@ Most of these CSS flex layout demos are very straightforward. Something relative
   .parent9 > div {
     height: 25%;
     width: 40%;
+  }
+
+  .parent10 {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .parent10 > div {
+    border-radius: 2px;
+    width: 17px;
+    height: 10px;
+  }
+  .parent10 > div:nth-child(3n) {
+    width: 35px;
+  }
+  .parent10 > div:nth-child(4n) {
+    width: 10px;
+  }
+  .parent10 > div:nth-child(2),
+  .parent10 > div:nth-child(7) {
+    width: 40px;
   }
 </style>
