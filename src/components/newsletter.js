@@ -112,7 +112,7 @@ export default function Newsletter() {
           <p className={styles.info}>
             Need to see a{" "}
             <OutboundLink
-              href="https://mailchi.mp/0c360f94c1ae/issue-7-react-testing"
+              href="https://mailchi.mp/a30b4920099a/issue-9-developer-friendly-react-component-tests"
               title="Previous newsletter issue"
               target="_blank"
             >
