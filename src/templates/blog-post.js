@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import { Link, graphql } from "gatsby"
 
 import Bio from "../components/bio"
@@ -15,26 +15,26 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const siteTitle = data.site.siteMetadata.title
   const siteUrl = data.site.siteMetadata.siteUrl
   const { previous, next } = pageContext
-  const [postViews, setPostViews] = useState(0)
+  // const [postViews, setPostViews] = useState(0)
 
   // Getting post views from https://counterapi.com/
-  useEffect(() => {
-    const legacyViews = post.frontmatter.legacyViews || 0
+  // useEffect(() => {
+  //   const legacyViews = post.frontmatter.legacyViews || 0
 
-    fetch(
-      `https://counterapi.com/api/webup.org/view/${post.id}?startNumber=${legacyViews}`,
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    )
-      .then(response => response.json())
-      .then(data => {
-        setPostViews(data.value)
-      })
-  })
+  //   fetch(
+  //     `https://counterapi.com/api/webup.org/view/${post.id}?startNumber=${legacyViews}`,
+  //     {
+  //       method: "GET",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //     }
+  //   )
+  //     .then(response => response.json())
+  //     .then(data => {
+  //       setPostViews(data.value)
+  //     })
+  // })
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -81,14 +81,14 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           >
             {post.frontmatter.date} &nbsp; | {" ⏳ "}
             {post.fields.readingTime.text}
-            <span
+            {/* <span
               style={{
                 visibility: !!postViews ? "visible" : "hidden",
                 marginRight: "30px",
               }}
             >
               {postViews} unique reads
-            </span>
+            </span> */}
           </small>
         </header>
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
