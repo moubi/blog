@@ -8,6 +8,7 @@ import Newsletter from "../components/newsletter"
 import NewsletterLink from "../components/newsletter-link"
 // import PopupNewsletter from "../components/popup-newsletter"
 // import Share from "../components/share"
+import Kofi from "../components/kofi"
 import { rhythm, scale } from "../utils/typography"
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
@@ -100,6 +101,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           }}
         />
         <Newsletter />
+        <Kofi />
         {/* <PopupNewsletter /> */}
         <footer
           style={{
