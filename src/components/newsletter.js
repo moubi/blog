@@ -50,14 +50,47 @@ export default function Newsletter() {
       ) : (
         <>
           <div>
-            <h2
+            {/* <h2
               className={styles.heading}
               style={{
                 fontFamily: "var(--secondaryFontFamily)",
               }}
             >
               Join a front-end newsletter with well-tested content
+            </h2> */}
+            <h2 className={styles.heading}>
+              <span
+                style={{
+                  fontFamily: "var(--secondaryFontFamily)",
+                }}
+              >
+                Join{" "}
+              </span>
+
+              <span
+                style={{
+                  fontWeight: "400",
+                  fontSize: "34px",
+                }}
+              >
+                Code
+                <span
+                  style={{
+                    fontWeight: "800",
+                  }}
+                >
+                  Distress
+                </span>
+              </span>
             </h2>
+            <h3
+              className={styles.subheading}
+              style={{
+                fontFamily: "var(--secondaryFontFamily)",
+              }}
+            >
+              A front-end newsletter with well-tested content
+            </h3>
             <p>
               I write about <strong>code and programming</strong> challenges
               when building software. Things I can't easily find answers to by
