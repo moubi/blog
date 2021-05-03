@@ -50,14 +50,6 @@ export default function Newsletter() {
       ) : (
         <>
           <div>
-            {/* <h2
-              className={styles.heading}
-              style={{
-                fontFamily: "var(--secondaryFontFamily)",
-              }}
-            >
-              Join a front-end newsletter with well-tested content
-            </h2> */}
             <h2 className={styles.heading}>
               <span
                 style={{
